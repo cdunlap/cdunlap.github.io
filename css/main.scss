@@ -2,12 +2,15 @@
 ---
 @import "icons";
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
 html {
 	position: relative;
 	min-height: 100%;
 }
 
 body {
+	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 80px;
 	> .container {
 		padding: 60px 15px 0;
@@ -28,4 +31,10 @@ body {
 
 .full-width {
 	width: 100%;
+}
+
+.profile-image {
+	img {
+		max-width: 213px;
+	}
 }
