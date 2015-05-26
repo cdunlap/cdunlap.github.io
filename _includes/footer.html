@@ -3,14 +3,23 @@
     <div class="row">
       <div class="col-xs-8">
         <p class="small text-muted">Copyright &copy; 2015 Cale Dunlap. Build with <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> and <a href="http://jekyllrb.com" target="_blank">Jekyll</a>, hosted on <a href="http://github.com" target="_blank">GitHub</a>.</p>
+        <p class="small text-muted">Check out the source for my site: <a href="https://github.com/cdunlap/cdunlap.github.io" target="_blank">https://github.com/cdunlap/cdunlap.github.io</a></p>
       </div>
       <div class="col-xs-4">
-        <div class="social-buttons">
+        <div class="row">
+        <div class="social-buttons pull-right">
           {% for social in site.data.social %}
             <a href="{{social.url}}" title="{{social.title}}" target="_blank">
               <span class="{{social.icon}}"></span>
             </a>
           {% endfor %}
+        </div>
+        </div>
+        <div class="row">
+          <div class="pull-right">
+            <a href="https://twitter.com/dunlapcj" class="twitter-follow-button" data-show-count="false">Follow @dunlapcj</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
         </div>
       </div>
     </div>
