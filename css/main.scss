@@ -6,6 +6,19 @@
 
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
 
+@keyframes cursor-pulse {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+@-moz-keyframes cursor-pulse {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+@-webkit-keyframes cursor-pulse {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+
 ::selection {
 	background: rgba(255,0,0,.4);
 }
@@ -30,8 +43,29 @@ a {
 	transition: .3s color;
 }
 
+
 main a {
 	background: #efefef;
+}
+
+.cursor {
+	animation-name: cursor-pulse;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+
+	-moz-animation-name: cursor-pulse;
+	-moz-animation-duration: .5s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+	-moz-animation-timing-function: linear;
+
+	-webkit-animation-name: cursor-pulse;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: linear;
 }
 
 .navbar a {
