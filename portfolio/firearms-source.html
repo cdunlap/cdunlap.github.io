@@ -1,0 +1,48 @@
+---
+layout: project
+title: Firearms&#58; Source
+project_type: Video Game
+screenshots:
+  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00007.jpg
+  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00052.jpg
+  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00060.jpg
+  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00062.jpg
+  - /img/portfolio/firearms-source/2.0/dev/2012-10-14_00001.jpg
+---
+
+<section id="website">
+	<h2>Website</h2>
+	<a href="http://firearms-source.com" target="_blank">http://firearms-source.com</a>
+</section>
+
+<section id="summary">
+	<h2>Summary</h2>
+	<p>I think the website sums it up best:</p>
+	<blockquote>
+		<p>Firearms: Source is a high adrenaline First Person Shooter that emphasizes precision aiming, high mobility, and team-based strategy. Firearms: Source is a return to the classic shooters of the 90′s where the games had higher learning curves and a greater rewards for mastering the game mechanics. While our guns provide a sense of immersion unrivaled by even the most popular of retail shooters, our gameplay remains a fast paced deathmatch unrestricted by realism.</p>
+		<footer><cite title="Firearms: Source Website">Firearms: Source Website</cite></footer>
+	</blockquote>
+</section>
+
+<section id="responsibilities">
+	<h2>Responsibilities</h2>
+	<p>I was responsible for writing a large portion of the weapon handling and behaviors, gameplay/rules, animation state machines, scripting hooks for game designers, the weapon and body attachment/customization systems, entities for level designers, material proxies for artists, screen-space (and some world-space) effects, HUD, and UI. All of this was written mostly in C++ using a little bit of C when and where required. The initial IDE of choice was Visual Studio 2010 but myself and the other programmers moved to Visual Studio 2012 later on.</p>
+</section>
+
+<section id="screenshots">
+	<h2>Screenshots</h2>
+	<div class="row">
+		{% for screenshot in page.screenshots %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<a href="{{screenshot}}" class="thumbnail">
+				<img src="{{screenshot}}" alt="">
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section id="videos">
+	<h2>Video</h2>
+
+</section>

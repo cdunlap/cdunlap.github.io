@@ -1,0 +1,26 @@
+- name: Firearms&#58; Source
+  image: /img/portfolio/firearms-source/2.0/ss_ave1.jpg
+  url: /portfolio/firearms-source.html
+  description: A Source Engine (Half-Life 2) total-conversion developed in C and C++ using the Source SDK.
+
+- name: Firearms
+  image: /img/portfolio/firearms/caen9.jpg
+  url: /portfolio/firearms.html
+  description: A GoldSrc Engine (Half-Life 1) total-conversion developed in C and C++ using the GoldSrc SDK.
+
+- name: Penguin Smash
+  image: /img/portfolio/psmash/icebreakers0008.jpg
+  url: /portfolio/penguin-smash.html
+  description: A whimsical Source Engine (Half-Life 2) mod developed in C and C++ using the Source SDK.
+
+- name: GDIS
+  image: /img/portfolio/gdis/hl2-2011-01-28-07-59-56-49.jpg
+  url: /portfolio/gdis.html
+  description: Developed for the US Army as a system for training soldiers with virtual missions.
+
+- name: GDIS&#58; MMI
+  image: /img/portfolio/mmist.jpg
+  url: /portfolio/gdis-mmi.html
+  # description: Developed as a prototype for the US Army RDECOM to demonstrate the capability of using commercially available hardware and software to create immersive simulations for dismounted infantry.
+  description: An expansion of GDIS for the US Army RDECOM that adds virtual immersion capability through gesture &amp; voice recognition and full-body motion capture
+

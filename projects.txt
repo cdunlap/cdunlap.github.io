@@ -1,0 +1,8 @@
+Things to include:
+
+* Firearms: Source
+* Firearms
+* Penguin Smash (?)
+* VIKENG/GDIS
+* SimBridge (Show architecture and explain what it did)
+* Whatever projects I worked on that have portfolio rights
