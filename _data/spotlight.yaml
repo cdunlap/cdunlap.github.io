@@ -1,5 +1,5 @@
 - name: Firearms&#58; Source
-  image: /img/portfolio/fas1.jpg
+  image: /img/portfolio/firearms-source/fas1.jpg
   url: /portfolio/firearms-source.html
   description: A Source Engine total-conversion developed in C and C++ using the Source SDK.
 
@@ -8,7 +8,7 @@
 #   url: /portfolio/penguin-smash.html
 #   description: A whimsical Source Engine mod developed in C and C++ using the Source SDK.
 
-- name: GDIS MMI
-  image: /img/portfolio/mmist.jpg
-  url: /portfolio/gdis-mmi.html
+- name: GDIS &amp; MMIST
+  image: /img/portfolio/gdis/mmist.jpg
+  url: /portfolio/gdis.html
   description: Developed as a prototype for the US Army RDECOM to demonstrate the capability of using commercially available hardware and software to create immersive simulations for dismounted infantry.

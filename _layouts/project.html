@@ -2,15 +2,17 @@
 layout: default
 show_in_nav: false
 ---
+{% if page.header_image %}
+<div class="header-image" style="background-image: url({{page.header_image}})">
+	<h1 class="typed-title"><span class="text"></span></h1>
+</div>
+{% endif %}
+<div class="container">
+	<main class="project">
+		{% unless page.header_image %}
+		<h1 class="page-header typed-title"><span class="text"></span></h1>
+		{% endunless %}
 
-<main class="project">
-	{% if page.header_image %}
-	<div class="header-image" style="background-image: url({{page.header_image}})">
-		<h1 class="typed-title"><span class="text"></span></h1>
-	</div>
-	{% else %}
-	<h1 class="page-header typed-title"><span class="text"></span></h1>
-	{% endif %}
-
-	{{content}}
-</main>
+		{{content}}
+	</main>
+</div>

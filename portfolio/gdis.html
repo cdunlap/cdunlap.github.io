@@ -1,0 +1,83 @@
+---
+layout: project
+title: GDIS &amp; MMIST
+project_type: Simulation
+header_image: /img/portfolio/gdis/mmist.jpg
+screenshots:
+  - url: /img/portfolio/gdis/hl2-2011-01-28-07-59-56-49.jpg
+    caption: Scenario editor&#58; NPC routing system
+  - url: /img/portfolio/gdis/hl2-2011-01-28-08-01-55-24.jpg
+    caption: Scenario editor&#58; Object creator, NPC
+  - url: /img/portfolio/gdis/hl2-2011-01-28-08-02-55-57.jpg
+    caption: Scenario editor&#58; Object crerator, vehicle
+  - url: /img/portfolio/gdis/source-afghanistan0002.jpg
+  - url: /img/portfolio/gdis/lvc.jpg
+    caption: GDIS and content servers combined to allow live and virtual constructive simulations to all play together and perform distributed after-action review (AAR)
+  - url: /img/portfolio/gdis/mmist.jpg
+    caption: The MMIST/VIKENG system
+---
+
+<section id="website">
+	<h2>Website</h2>
+	<ul>
+		<li><strong>GDIS: </strong><a href="http://www.resrchnet.com/products/gdis/" target="_blank">http://www.resrchnet.com/products/gdis/</a></li>
+		<li><strong>MMIST: </strong><a href="http://www.resrchnet.com/products/mmist/" target="_blank">http://www.resrchnet.com/products/mmist/</a></li>
+	</ul>
+</section>
+
+<section id="summary">
+	<h2>Summary</h2>
+	<p>Game Distributed Interactive Simulation (GDIS) was developed for the US Army as a system for training soldiers using virtual missions. The goal was to use low-cost commercial video game engines instead of larger more expensive simulation software. GDIS is not specific to any particular video game engine and has &quot;adapters&quot; for the Source, Gambryo, CryEngine, and Unity 3D engines.</p>
+	<p>GDIS also has an immersion component called MMIST/VIKENG. This incorporated full-body motion capture and voice and gesture recognition using commerically available hardware.</p>
+	<p>There is a huge explanation of the features and use cases for GDIS on the website at <a href="http://www.resrchnet.com/products/gdis/" target="_blank">http://www.resrchnet.com/products/gdis/</a></p>
+</section>
+
+<section id="responsibilities">
+	<h2>Responsibilities</h2>
+	<p>The team of programmers was very small, and during the course of my employment with Research Network, Inc. our team fluctuated between 2 and 5 programmers. I became responsible for managing the team, doing demonstrations for clients, as well as writing code.</p>
+	<p>The code that I primarily focused on was called SimBridge. SimBridge is a real-time message passing system where the non-visual heaving lifting takes place. The code is highly multi-threaded and incorporates TCP and UDP transport mechanisms as well as various extensibility hooks. SimBridge is responsible for managing hardware devices (such as motion capture equipment), voice and gesture recognition, network communication between the simulation and video game engines, as well as any other message passing between the various extensions. SimBridge is extensible via a C++ SDK as well as scriptable in a limited fashion using JavaScript.</p>
+	<p>I could go into great detail about GDIS, MMIST, and SimBridge but I don't want to bore you :) So if you're curious, <a href="mailto:cale.dunlap@gmail.com" target="_blank">ask me</a>.</p>
+</section>
+
+<section id="screenshots">
+	<h2>Screenshots &amp; Graphics</h2>
+	<div class="row">
+		{% for screenshot in page.screenshots %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<a href="{{screenshot.url}}" target="_blank"><img src="{{screenshot.url}}" alt=""></a>
+				{% if screenshot.caption %}
+				<div class="caption">{{screenshot.caption}}</div>
+				{% endif %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section id="videos">
+	<h2>Videos</h2>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/C3H6v6JoD6w" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="caption">
+					<p>Simulation of radio signal strength and interference in the Source engine</p>
+					<p><strong>Warning:</strong> Audio is not normalized</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/TzoSkLgLCBE" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="caption">
+					<p>MMIST Full-body motion capture, voice recognition, and weapon firing gesture recognition in the Source engine... and yeah that's me in the suit.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

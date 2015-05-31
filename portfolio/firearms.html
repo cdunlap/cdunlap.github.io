@@ -1,0 +1,73 @@
+---
+layout: project
+title: Firearms
+project_type: Video Game
+header_image: /img/portfolio/firearms/52029ss.jpg
+screenshots:
+  - /img/portfolio/firearms/caen9.jpg
+  - /img/portfolio/firearms/coldwar1.jpg
+  - /img/portfolio/firearms/m60_ingame.jpg
+  - /img/portfolio/firearms/marie02.jpg
+  - /img/portfolio/firearms/potw.jpg
+  - /img/portfolio/firearms/potw2.jpg
+  - /img/portfolio/firearms/upham01.jpg
+---
+
+<section id="summary">
+	<h2>Summary</h2>
+	<p>Firearms was a fast-paced first-person shooter created on the GoldSrc engine (Half-Life 1 mod). It featured 27 weapons based on real-life models and animations. The gameplay is similar to that of the Battlefield franchise (territorial control, control points, etc.)--though Firearms existed before Battlefield ever did ;) It won awards and was eventually bundled with the first retail release of Counter-Strike.</p>
+</section>
+
+<section id="responsibilities">
+	<h2>Responsibilities</h2>
+	<p>I was the only programmer for this game between version 2.65 (around 2002) and 3.0 (around 2005). I was responsible for adding new features, weapons, gameplay mechanics, HUD and UI elements, as well as fixing bugs and making improvements to existing systems.</p>
+</section>
+
+<section id="screenshots">
+	<h2>Screenshots</h2>
+	<div class="row">
+		{% for screenshot in page.screenshots %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<a href="{{screenshot}}" class="thumbnail">
+				<img src="{{screenshot}}" alt="">
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section id="videos">
+	<h2>Videos</h2>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/KjGegUPnIgs" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="caption">
+					<p>Video that covers some of the milestone releases of Firearms and Firearms: Source--a history lesson of sorts.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/WfhiG-E7qxA" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="caption">
+					<p>A &quot;frag&quot; video created by a community member.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/HrDNQ-qX_1M" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="caption">
+					<p>A &quot;frag&quot; video I made in version 2.7... I was pretty good with the Benelli M3 back then.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
