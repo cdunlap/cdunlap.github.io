@@ -3,18 +3,22 @@
   url: /portfolio/firearms-source.html
   description: A Source Engine (Half-Life 2) total-conversion developed in C and C++ using the Source SDK.
 
+- name: VIKENG Mocap Tool
+  image: /img/portfolio/vikeng-mocap.jpg
+  url: /portfolio/vikeng-mocap.html
+  description: Native application used to record and review motion capture data as well as gesture recognition information.
+
 - name: GDIS &amp; MMIST
-  image: /img/portfolio/gdis/hl2-2011-01-28-07-59-56-49.jpg
+  image: /img/portfolio/gdis.jpg
   url: /portfolio/gdis.html
   description: Developed for the US Army as a system for training soldiers with virtual missions using both traditional game controllers or optionally using full-body motion capture and voice recognition.
 
-# - name: Penguin Smash
-#   image: /img/portfolio/psmash/icebreakers0008.jpg
-#   url: /portfolio/penguin-smash.html
-#   description: A whimsical Source Engine (Half-Life 2) mod developed in C and C++ using the Source SDK.
+- name: CTask-Lite
+  image: /img/portfolio/ctask-lite.jpg
+  url: /portfolio/ctask-lite.html
+  description: A an extremely simple, no-frills task management system written in PHP backed by SQLite
 
 - name: Firearms
-  image: /img/portfolio/firearms/caen9.jpg
+  image: /img/portfolio/firearms.jpg
   url: /portfolio/firearms.html
   description: A GoldSrc Engine (Half-Life 1) total-conversion developed in C and C++ using the GoldSrc SDK.
-

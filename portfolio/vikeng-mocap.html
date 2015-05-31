@@ -1,0 +1,42 @@
+---
+layout: project
+title: VIKENG Mocap Tool
+project_type: Native Application
+screenshots:
+  - /img/portfolio/vikeng-mocap/mocap-tool1.jpg
+---
+
+<section id="summary">
+	<h2>Summary</h2>
+	<p>This is a tool that I wrote for recording and reviewing motion capture data as well as gesture library data for <a href="{{'/portfolio/gdis.html' | prepend: site.baseurl }}">MMIST</a>. We used it to record new gestures into the gesture recognition database as well as review virtual locomotion (walking/running in a virtual world) information.</p>
+	<p>This project is a native application written in C++ using <a href="http://www.juce.com/" target="_blank">JUCE</a> and <a href="http://www.visualizationlibrary.org/documentation/index.html" target="_blank">Visualization Library</a>.</p> 
+</section>
+
+<section id="screenshots">
+	<h2>Screenshots</h2>
+	<div class="row">
+		{% for screenshot in page.screenshots %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<a href="{{screenshot}}" class="thumbnail" target="_blank">
+				<img src="{{screenshot}}" alt="">
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+</section>
+
+<section id="video">
+	<h2>Video</h2>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe src="https://www.youtube.com/embed/TCNXQiav-hc" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="caption">
+					<p>Reviewing a playback of pre-recorded data.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
