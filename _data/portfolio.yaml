@@ -18,6 +18,11 @@
   url: /portfolio/ctask-lite.html
   description: A an extremely simple, no-frills task management system written in PHP backed by SQLite
 
+- name: Firearms 2
+  image: /img/portfolio/firearms2.jpg
+  url: /portfolio/firearms2.html
+  description: Between Firearms and Firearms&#58; Source there was Firearms 2. This was one of at least two attempts at a Firearms reboot.
+
 - name: Firearms
   image: /img/portfolio/firearms.jpg
   url: /portfolio/firearms.html
