@@ -28,44 +28,44 @@ videos:
 ---
 
 <section id="summary">
-	<h2>Summary</h2>
-	<p>Between <a href="{{'/portfolio/firearms.html' | prepend: site.baseurl}}">Firearms</a> and <a href="{{'/portfolio/firearms-source.html' | prepend: site.baseurl}}">Firearms: Source</a> was Firearms 2. This project was one of at least 2 attempts at a <a href="{{'/portfolio/firearms.html' | prepend: site.baseurl}}">Firearms</a> reboot on the Source Engine. Development of Firearms 2 halted and I eventually joined up with the <a href="{{'/portfolio/firearms-source.html' | prepend: site.baseurl}}">Firearms: Source</a> team to complete that project.</p>
+  <h2>Summary</h2>
+  <p>Between <a href="{{'/portfolio/firearms.html' | prepend: site.baseurl}}">Firearms</a> and <a href="{{'/portfolio/firearms-source.html' | prepend: site.baseurl}}">Firearms: Source</a> was Firearms 2. This project was one of at least 2 attempts at a <a href="{{'/portfolio/firearms.html' | prepend: site.baseurl}}">Firearms</a> reboot on the Source Engine. Development of Firearms 2 halted and I eventually joined up with the <a href="{{'/portfolio/firearms-source.html' | prepend: site.baseurl}}">Firearms: Source</a> team to complete that project.</p>
 </section>
 
 <section id="responsibilities">
-	<h2>Responsibilities</h2>
-	<p>I was the only programmer on the project, therefore I was responsible for everything related to the code. I even created a few assets myself when I needed them. I was responsible for creating the weapon behaviors, animation state machines, gameplay rules, HUD, UI, and effects.</p>
+  <h2>Responsibilities</h2>
+  <p>I was the only programmer on the project, therefore I was responsible for everything related to the code. I even created a few assets myself when I needed them. I was responsible for creating the weapon behaviors, animation state machines, gameplay rules, HUD, UI, and effects.</p>
 </section>
 
 <section id="screenshots">
-	<h2>Screenshots</h2>
-	<div class="row">
-		{% for screenshot in page.screenshots %}
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<a href="{{screenshot}}" class="thumbnail" target="_blank">
-				<img src="{{screenshot}}" alt="">
-			</a>
-		</div>
-		{% endfor %}
-	</div>
+  <h2>Screenshots</h2>
+  <div class="row">
+    {% for screenshot in page.screenshots %}
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <a href="{{screenshot}}" class="thumbnail" target="_blank">
+        <img src="{{screenshot}}" alt="">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 </section>
 
 <section id="videos">
-	<h2>Videos</h2>
-	<div class="row">
-		{% for video in page.videos %}
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<div class="thumbnail">
-				<div class="embed-responsive embed-responsive-16by9">
-					<iframe src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
-				</div>
-				{% if video.caption %}
-				<div class="caption">
-					<p>{{video.caption}}</p>
-				</div>
-				{% endif %}
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+  <h2>Videos</h2>
+  <div class="row">
+    {% for video in page.videos %}
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {% if video.caption %}
+        <div class="caption">
+          <p>{{video.caption}}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </section>

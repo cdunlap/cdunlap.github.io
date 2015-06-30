@@ -8,24 +8,24 @@ screenshots:
 ---
 
 <section id="website">
-	<h2>Website</h2>
-	<a href="https://github.com/cdunlap/ctask-lite" target="_blank">https://github.com/cdunlap/ctask-lite</a>
+  <h2>Website</h2>
+  <a href="https://github.com/cdunlap/ctask-lite" target="_blank">https://github.com/cdunlap/ctask-lite</a>
 </section>
 
 <section id="summary">
-	<h2>Summary</h2>
-	<p>CTask is a really simple task management system that I wrote back in 2006 to manage incoming requests from testers while I worked on Firearms 2 (never released, now defunct). After <a href="{{'/portfolio/firearms2.html' | prepend: site.baseurl}}">Firearms 2</a> development halted I released the code for CTask on GitHub. It uses SQLite and PHP and is themeable via jQuery UI themeroller (though I haven't tested that in a while).</p>
+  <h2>Summary</h2>
+  <p>CTask is a really simple task management system that I wrote back in 2006 to manage incoming requests from testers while I worked on Firearms 2 (never released, now defunct). After <a href="{{'/portfolio/firearms2.html' | prepend: site.baseurl}}">Firearms 2</a> development halted I released the code for CTask on GitHub. It uses SQLite and PHP and is themeable via jQuery UI themeroller (though I haven't tested that in a while).</p>
 </section>
 
 <section id="screenshots">
-	<h2>Screenshots</h2>
-	<div class="row">
-		{% for screenshot in page.screenshots %}
-		<div class="col-xs-12 col-sm-6 col-md-4">
-			<a href="{{screenshot}}" class="thumbnail" target="_blank">
-				<img src="{{screenshot}}" alt="">
-			</a>
-		</div>
-		{% endfor %}
-	</div>
+  <h2>Screenshots</h2>
+  <div class="row">
+    {% for screenshot in page.screenshots %}
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <a href="{{screenshot}}" class="thumbnail" target="_blank">
+        <img src="{{screenshot}}" alt="">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 </section>
