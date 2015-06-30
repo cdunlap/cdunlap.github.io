@@ -1,0 +1,15 @@
+<section id="screenshots">
+  <h2>{% if include.section_title %}{{ include.section_title }}{% else %}Screenshots{% endif %}</h2>
+  <div class="row">
+    {% for screenshot in page.screenshots %}
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="{{screenshot.url}}" target="_blank" data-lightbox="screenshots" {% if screenshot.caption %}data-title="{{screenshot.caption}}"{% endif %}><img src="{{screenshot.url}}" alt=""></a>
+        {% if screenshot.caption %}
+        <div class="caption">{{screenshot.caption}}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

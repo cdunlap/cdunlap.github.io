@@ -4,11 +4,11 @@ title: Firearms&#58; Source
 project_type: Video Game
 header_image: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00052.jpg
 screenshots:
-  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00007.jpg
-  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00052.jpg
-  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00060.jpg
-  - /img/portfolio/firearms-source/2.0/dev/2012-09-23_00062.jpg
-  - /img/portfolio/firearms-source/2.0/dev/2012-10-14_00001.jpg
+  - url: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00007.jpg
+  - url: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00052.jpg
+  - url: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00060.jpg
+  - url: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00062.jpg
+  - url: /img/portfolio/firearms-source/2.0/dev/2012-10-14_00001.jpg
 videos:
   - url: https://www.youtube.com/embed/uG0MVzzRfLY
     caption: The screenspace and audio effect when a player is hit by a flashbang.
@@ -16,6 +16,8 @@ videos:
     caption: Tritium night sights on a few pistols, color controlled by a material proxy that is bound to the player's crosshair color preference.
   - url: https://www.youtube.com/embed/4md6XCuBHsc
     caption: One of the playtests for the 2.0 version, prior to release. We were chatting in Mumble during the test so you can hear the developer chatter (which can get a little goofy) as well as gameplay video.
+video_lead: >
+  <p><a href="https://www.youtube.com/watch?v=rKAVyoKV08M&list=LLZaQjsIrQabrqTH6g5BWUNg&index=8" target="_blank">This one</a> is probably the best-produced video of the game, done by one of our testers. I can't embed it here because embeds are disabled for this video, but I seriously encourage you to watch it: <a href="https://www.youtube.com/watch?v=rKAVyoKV08M&list=LLZaQjsIrQabrqTH6g5BWUNg&index=8" target="_blank">FireArms Source Mini</a></p>
 ---
 
 <section id="website">
@@ -37,36 +39,6 @@ videos:
   <p>I was responsible for writing a large portion of the weapon handling and behaviors, gameplay/rules, animation state machines, scripting hooks for game designers, the weapon and body attachment/customization systems, entities for level designers, material proxies for artists, screen-space (and some world-space) effects, HUD, and UI. All of this was written mostly in C++ using a little bit of C when and where required. The initial IDE of choice was Visual Studio 2010 but myself and the other programmers moved to Visual Studio 2012 later on.</p>
 </section>
 
-<section id="screenshots">
-  <h2>Screenshots</h2>
-  <div class="row">
-    {% for screenshot in page.screenshots %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <a href="{{screenshot}}" class="thumbnail" target="_blank">
-        <img src="{{screenshot}}" alt="">
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+{% include portfolio/screenshots.html %}
 
-<section id="videos">
-  <h2>Video</h2>
-  <p><a href="https://www.youtube.com/watch?v=rKAVyoKV08M&list=LLZaQjsIrQabrqTH6g5BWUNg&index=8" target="_blank">This one</a> is probably the best-produced video of the game, done by one of our testers. I can't embed it here because embeds are disabled for this video, but I seriously encourage you to watch it: <a href="https://www.youtube.com/watch?v=rKAVyoKV08M&list=LLZaQjsIrQabrqTH6g5BWUNg&index=8" target="_blank">FireArms Source Mini</a></p>
-  <div class="row">
-    {% for video in page.videos %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        {% if video.caption %}
-        <div class="caption">
-          <p>{{video.caption}}</p>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+{% include portfolio/videos.html lead_copy=page.video_lead %}

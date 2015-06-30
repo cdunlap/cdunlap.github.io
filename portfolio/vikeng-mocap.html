@@ -3,7 +3,7 @@ layout: project
 title: VIKENG Mocap Tool
 project_type: Native Application
 screenshots:
-  - /img/portfolio/vikeng-mocap/mocap-tool1.jpg
+  - url: /img/portfolio/vikeng-mocap/mocap-tool1.jpg
 videos:
   - url: https://www.youtube.com/embed/TCNXQiav-hc
     caption: Reviewing a playback of pre-recorded data.
@@ -15,35 +15,5 @@ videos:
   <p>This project is a native application written in C++ using <a href="http://www.juce.com/" target="_blank">JUCE</a> and <a href="http://www.visualizationlibrary.org/documentation/index.html" target="_blank">Visualization Library</a>.</p> 
 </section>
 
-<section id="screenshots">
-  <h2>Screenshots</h2>
-  <div class="row">
-    {% for screenshot in page.screenshots %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <a href="{{screenshot}}" class="thumbnail" target="_blank">
-        <img src="{{screenshot}}" alt="">
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="videos">
-  <h2>Videos</h2>
-  <div class="row">
-    {% for video in page.videos %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        {% if video.caption %}
-        <div class="caption">
-          <p>{{video.caption}}</p>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+{% include portfolio/screenshots.html %}
+{% include portfolio/videos.html %}

@@ -4,19 +4,19 @@ title: Firearms 2
 project_type: Video Game
 header_image: /img/portfolio/firearms2.jpg
 screenshots:
-  - /img/portfolio/firearms2/49234418.jpg
-  - /img/portfolio/firearms2/64019274.jpg
-  - /img/portfolio/firearms2/8852212.jpg
-  - /img/portfolio/firearms2/93r2.jpg
-  - /img/portfolio/firearms2/arsenal_menu.jpg
-  - /img/portfolio/firearms2/artillery_smoke.jpg
-  - /img/portfolio/firearms2/deaglegame.jpg
-  - /img/portfolio/firearms2/mac10s.jpg
-  - /img/portfolio/firearms2/menu.jpg
-  - /img/portfolio/firearms2/mk23.jpg
-  - /img/portfolio/firearms2/nvg_final_effect.jpg
-  - /img/portfolio/firearms2/skills_menu.jpg
-  - /img/portfolio/firearms2/team_menu.jpg
+  - url: /img/portfolio/firearms2/49234418.jpg
+  - url: /img/portfolio/firearms2/64019274.jpg
+  - url: /img/portfolio/firearms2/8852212.jpg
+  - url: /img/portfolio/firearms2/93r2.jpg
+  - url: /img/portfolio/firearms2/arsenal_menu.jpg
+  - url: /img/portfolio/firearms2/artillery_smoke.jpg
+  - url: /img/portfolio/firearms2/deaglegame.jpg
+  - url: /img/portfolio/firearms2/mac10s.jpg
+  - url: /img/portfolio/firearms2/menu.jpg
+  - url: /img/portfolio/firearms2/mk23.jpg
+  - url: /img/portfolio/firearms2/nvg_final_effect.jpg
+  - url: /img/portfolio/firearms2/skills_menu.jpg
+  - url: /img/portfolio/firearms2/team_menu.jpg
 videos:
   - url: https://www.youtube.com/embed/ull7cWe65PA
   - url: https://www.youtube.com/embed/l2JeNa__Rf0
@@ -37,35 +37,5 @@ videos:
   <p>I was the only programmer on the project, therefore I was responsible for everything related to the code. I even created a few assets myself when I needed them. I was responsible for creating the weapon behaviors, animation state machines, gameplay rules, HUD, UI, and effects.</p>
 </section>
 
-<section id="screenshots">
-  <h2>Screenshots</h2>
-  <div class="row">
-    {% for screenshot in page.screenshots %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <a href="{{screenshot}}" class="thumbnail" target="_blank">
-        <img src="{{screenshot}}" alt="">
-      </a>
-    </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="videos">
-  <h2>Videos</h2>
-  <div class="row">
-    {% for video in page.videos %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        {% if video.caption %}
-        <div class="caption">
-          <p>{{video.caption}}</p>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+{% include portfolio/screenshots.html %}
+{% include portfolio/videos.html %}

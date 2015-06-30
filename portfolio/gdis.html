@@ -18,7 +18,7 @@ screenshots:
 videos:
   - url: https://www.youtube.com/embed/C3H6v6JoD6w
     caption: >
-      Simulation of radio signal strength and interference in the Source engine<br>
+      Simulation of radio signal strength and interference in the Source engine
       <strong>Warning&#58;</strong> Audio is not normalized.
   - url: https://www.youtube.com/embed/TzoSkLgLCBE
     caption: MMIST Full-body motion capture, voice recognition, and weapon firing gesture recognition in the Source engine... and yeah that's me in the suit.
@@ -46,38 +46,8 @@ videos:
   <p>I could go into great detail about GDIS, MMIST, and SimBridge but I don't want to bore you :) So if you're curious, <a href="mailto:cale.dunlap@gmail.com" target="_blank">ask me</a>.</p>
 </section>
 
-<section id="screenshots">
-  <h2>Screenshots &amp; Graphics</h2>
-  <div class="row">
-    {% for screenshot in page.screenshots %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <a href="{{screenshot.url}}" target="_blank"><img src="{{screenshot.url}}" alt=""></a>
-        {% if screenshot.caption %}
-        <div class="caption">{{screenshot.caption}}</div>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
 
-<section id="videos">
-  <h2>Videos</h2>
-  <div class="row">
-    {% for video in page.videos %}
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        {% if video.caption %}
-        <div class="caption">
-          <p>{{video.caption}}</p>
-        </div>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</section>
+
+{% include portfolio/screenshots.html section_title='Screenshots &amp; Graphics' %}
+
+{% include portfolio/videos.html %}
