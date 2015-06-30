@@ -14,9 +14,6 @@
 	{% assign og_image = page.og.image %}
 {% else if page.header_image %}
   {% assign og_image = page.header_image %}
-{% else %}
-	{% assign og_image = '/img/social.jpg' %}
-  }
 {% endif %}
 <head>
   <meta charset="utf-8">
@@ -39,7 +36,9 @@
   <meta property="og:title" content="{{ title }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | prepend: site.url + site.baseurl }}">
+  {% if og_image %}
   <meta property="og:image" content="{{ og_image | prepend: site.url + site.baseurl }}">
+  {% endif %}
   <meta property="og:description" content="{{ excerpt | strip_html | strip_newlines | truncate: 160 }}">
   <meta property="og:site_name" content="{{ site.title }}">
 
