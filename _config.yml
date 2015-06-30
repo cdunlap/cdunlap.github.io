@@ -4,7 +4,7 @@ email: cale.dunlap@gmail.com
 description: I'm a syntactically diverse software developer living in the Los Angeles, CA area of the United States.
 keywords: cale,dunlap,portfolio,hire,job,jobs,programmer,developer,engineer,video,games,c,cplusplus,c++,c#,csharp,development
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://caledunlap.com" # the base hostname & protocol for your site
+url: "http://www.caledunlap.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
