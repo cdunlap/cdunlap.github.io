@@ -1,29 +1,41 @@
 - name: Firearms&#58; Source
+  type: 'game'
   image: /img/portfolio/firearms-source/2.0/ss_ave1.jpg
   url: /portfolio/firearms-source.html
   description: A Source Engine (Half-Life 2) total-conversion developed in C and C++ using the Source SDK.
 
 - name: VIKENG Mocap Tool
+  type: 'game'
   image: /img/portfolio/vikeng-mocap.jpg
   url: /portfolio/vikeng-mocap.html
   description: Native application used to record and review motion capture data as well as gesture recognition information.
 
 - name: GDIS &amp; MMIST
+  type: 'game'
   image: /img/portfolio/gdis.jpg
   url: /portfolio/gdis.html
   description: Developed for the US Army as a system for training soldiers with virtual missions using both traditional game controllers or optionally using full-body motion capture and voice recognition.
 
 - name: CTask-Lite
+  type: 'web'
   image: /img/portfolio/ctask-lite.jpg
   url: /portfolio/ctask-lite.html
   description: A an extremely simple, no-frills task management system written in PHP backed by SQLite
 
 - name: Firearms 2
+  type: 'game'
   image: /img/portfolio/firearms2.jpg
   url: /portfolio/firearms2.html
   description: Between Firearms and Firearms&#58; Source there was Firearms 2. This was one of at least two attempts at a Firearms reboot.
 
 - name: Firearms
+  type: 'game'
   image: /img/portfolio/firearms.jpg
   url: /portfolio/firearms.html
   description: A GoldSrc Engine (Half-Life 1) total-conversion developed in C and C++ using the GoldSrc SDK.
+
+- name: Mideast Media Survey
+  type: 'web'
+  image: /img/portfolio/nuq.png
+  url: /portfolio/mideast-media.html
+  description: Created for Northwestern University in Qatar, this website enables visitors to explore data collected from a survey about how people in the middle east use media and the Internet.
