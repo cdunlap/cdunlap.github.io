@@ -1,5 +1,10 @@
+- name: Mideast Media Survey
+  image: /img/portfolio/nuq.png
+  url: /portfolio/mideast-media.html
+  description: Created for Northwestern University in Qatar, this website enables visitors to explore data collected from a survey about how people in the middle east use media and the Internet.
+
 - name: Firearms&#58; Source
-  image: /img/portfolio/firearms-source/fas1.jpg
+  image: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00062.jpg
   url: /portfolio/firearms-source.html
   description: A Source Engine total-conversion developed in C and C++ using the Source SDK.
 
