@@ -11,58 +11,68 @@ show_in_nav: true
   <h1 class="page-header typed-title"><span class="text"></span></h1>
 
   <div class="row">
-    <div class="col-xs-12">
+    <!-- Intro -->
+    <div class="col-xs-12 col-md-7 col-lg-8">
       <p>I'm a syntactically diverse software developer living in the Los Angeles, CA area of the United States. I hold an Associates degree in Computer Information Systems, a Bachelors degree in Game and Simulation Programming, and I've been writing software personally and professionally since 1999.</p>
 
       <p>The programming languages in which I am experienced include C, C++, C#, PHP, and JavaScript--just to name a few. I have experience in creating mobile, embedded, desktop, command-line, web, and video game applications for consumer, business, and government/defense purposes.</p>
-      
-      <p>I invite you to look through my <a href="{{ '/portfolio/index.html' | prepend: site.baseurl }}">portfolio</a>. Most of what you find here will be my video game and web projects. If you see something you like, shoot me an <a href="mailto:{{site.email}}">email</a>, or reach out on <a href="https://twitter.com/intent/follow?screen_name={{site.twitter_username}}" target="_blank">Twitter</a>, <a href="http://linkedin.com/in/{{site.linkedin_username}}">LinkedIn</a>, or any of the other social networks on which you can easily find me.</p>
-    </div>
-    
-  </div>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Languages &amp; Concepts</h3>
+      <p>I invite you to look through my <a href="{{ '/portfolio/index.html' | prepend: site.baseurl }}">portfolio</a>. Most of what you find here will be my video game and web projects. If you see something you like, shoot me an <a href="mailto:{{site.email}}">email</a>, or reach out on <a href="https://twitter.com/intent/follow?screen_name={{site.twitter_username}}" target="_blank">Twitter</a>, <a href="http://linkedin.com/in/{{site.linkedin_username}}">LinkedIn</a>, or any of the other social networks on which you can easily find me.</p>
+
+      <!-- Capabilities -->
+      <div class="row">
+        <!-- Languages -->
+        <div class="col-xs-12 col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Languages &amp; Concepts</h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+              {% for language in site.data.languages %}
+                <li>
+                  {% if language.url %}
+                  <a href="{{language.url}}" target="_blank">{{ language.name }}</a>
+                  {% else %}
+                  {{language.name}}
+                  {% endif %}
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="panel-body">
-          <ul>
-          {% for language in site.data.languages %}
-            <li>
-              {% if language.url %}
-              <a href="{{language.url}}" target="_blank">{{ language.name }}</a>
-              {% else %}
-              {{language.name}}
-              {% endif %}
-            </li>
-          {% endfor %}
-          </ul>
+        <!-- /Languages -->
+
+        <!-- Frameworks -->
+        <div class="col-xs-12 col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Frameworks, Libraries, &amp; Software</h3>
+            </div>
+            <div class="panel-body">
+              <ul>
+                {% for framework in site.data.frameworks %}
+                <li>
+                  {% if framework.url %}
+                  <a href="{{framework.url}}" target="_blank">{{ framework.name }}</a>
+                  {% else %}
+                  {{framework.name}}
+                  {% endif %}
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
         </div>
+        <!-- /Frameworks -->
       </div>
+      <!-- /Capabilities -->
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Frameworks, Libraries, &amp; Software</h3>
-        </div>
-        <div class="panel-body">
-          <ul>
-            {% for framework in site.data.frameworks %}
-            <li>
-              {% if framework.url %}
-              <a href="{{framework.url}}" target="_blank">{{ framework.name }}</a>
-              {% else %}
-              {{framework.name}}
-              {% endif %}
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
+    <!-- /Intro -->
+
+    <!-- Projects -->
+    <div class="col-xs-12 col-md-5 col-lg-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Project Spotlight</h3>
@@ -77,13 +87,15 @@ show_in_nav: true
             </div>
             <a class="project-description" href="{{project.url | prepend: site.baseurl}}">
               <h4>{{project.name}}</h4>
-              <p>{{project.description}}</p>
+              <p class="hidden-xs">{{project.description}}</p>
             </a>
           </div>
           {% endfor %}
         </div>
       </div>
     </div>
+    <!-- /Projects -->
+
   </div>
 </main>
 </div>
