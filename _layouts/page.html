@@ -5,7 +5,7 @@ show_in_nav: false
 
 <div class="container">
 	<main class="page {{page.name}}">
-		<h1 class="page-header typed-title"><span class="text"></span></h1>
+		<h1 class="page-header typed-title">{%if page.pre_typed %}{{page.pre_typed}}{%endif%}<span class="text"></span></h1>
 		{{ content }}
 	</main>
 </div>

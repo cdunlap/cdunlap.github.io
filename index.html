@@ -1,6 +1,11 @@
 ---
 layout: default
 title: About Me
+typed:
+  - Cake
+  - Cale
+  - Mw
+  - Me
 og_image: http://www.gravatar.com/avatar/34165c11653d6cd03044b5e1daf9cd66?s=200
 show_in_nav: true
 ---
@@ -8,7 +13,7 @@ show_in_nav: true
 <div class="container">
 <main class="home">
 
-  <h1 class="page-header typed-title"><span class="text"></span></h1>
+  <h1 class="page-header typed-title">About <span class="text"></span></h1>
 
   <div class="row">
     <!-- Intro -->
@@ -87,7 +92,7 @@ show_in_nav: true
             </div>
             <a class="project-description" href="{{project.url | prepend: site.baseurl}}">
               <h4>{{project.name}}</h4>
-              <p class="hidden-xs">{{project.description}}</p>
+              <p>{{project.description}}</p>
             </a>
           </div>
           {% endfor %}

@@ -1,7 +1,7 @@
 - name: Mideast Media Survey
   image: /img/portfolio/nuq.png
   url: /portfolio/mideast-media.html
-  description: Created for Northwestern University in Qatar, this website enables visitors to explore data collected from a survey about how people in the middle east use media and the Internet.
+  description: Explore data collected from a survey about how people in the middle east use media and the Internet.
 
 - name: Firearms&#58; Source
   image: /img/portfolio/firearms-source/2.0/dev/2012-09-23_00062.jpg
@@ -16,4 +16,4 @@
 - name: GDIS &amp; MMIST
   image: /img/portfolio/gdis/mmist.jpg
   url: /portfolio/gdis.html
-  description: Developed as a prototype for the US Army RDECOM to demonstrate the capability of using commercially available hardware and software to create immersive simulations for dismounted infantry.
+  description: Commercially available hardware and software as an immersive simulator.

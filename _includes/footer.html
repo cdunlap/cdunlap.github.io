@@ -32,11 +32,12 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
 
 <script>
-{% if page.title %}
+{% if page.typed %}
 $(function () {
   $('.typed-title > .text').typed({
-    strings: ['{{page.title}}'],
-    typeSpeed: 0
+    strings: {{ page.typed | jsonify }},
+    typeSpeed: 60,
+    startDelay: 400
   });
 });
 {% endif %}

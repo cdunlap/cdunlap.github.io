@@ -14,7 +14,7 @@
   type: 'game'
   image: /img/portfolio/gdis.jpg
   url: /portfolio/gdis.html
-  description: Developed for the US Army as a system for training soldiers with virtual missions using both traditional game controllers or optionally using full-body motion capture and voice recognition.
+  description: Immersive training simulator prototype for the US Army using commercially available hardware and software.
 
 - name: CTask-Lite
   type: 'web'
@@ -38,4 +38,4 @@
   type: 'web'
   image: /img/portfolio/nuq.png
   url: /portfolio/mideast-media.html
-  description: Created for Northwestern University in Qatar, this website enables visitors to explore data collected from a survey about how people in the middle east use media and the Internet.
+  description: Explore data collected from a survey about how people in the middle east use media and the Internet.
