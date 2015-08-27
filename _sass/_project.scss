@@ -57,6 +57,23 @@
     text-align: center;
   }
 }
+/* Only do this for browsers that support transitions and that are running
+ * JavaScript (since we use jQuery to apply the flipped class)
+ */
+html.js.csstransitions {
+  .project-card {
+    perspective: 500px;
+    transform-style: preserve-3d;
+    .project {
+      backface-visibility: hidden;
+      transform: rotateX(180deg);
+      transition: .4s transform;
+      &.flipped {
+        transform: rotateX(0deg);
+      }
+    }
+  }
+}
 .project {
   position: relative;
   .project-media .thumbnail img {
