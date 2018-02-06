@@ -1,5 +1,6 @@
 <template>
   <section class="hero">
+    <HeroParticles/>
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -26,8 +27,13 @@
 </template>
 
 <script>
+import HeroParticles from './HeroParticles'
+
 export default {
-  name: 'Hero'
+  name: 'Hero',
+  components: {
+    HeroParticles
+  }
 }
 </script>
 
@@ -37,6 +43,7 @@ export default {
 .hero {
   height: 100%;
   background: $black;
+  position: relative;
 }
 .hero-content {
   padding-bottom: 100px;
