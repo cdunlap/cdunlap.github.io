@@ -1,0 +1,20 @@
+$black: #000;
+$white: #fff;
+$brand-primary: #5784FF; // #5F28C7;
+$text-color: $black;
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+$nav-font: 'Roboto Condensed', sans-serif;
+$monogram-font: 'Expletus Sans', cursive;
+$headings-font-weight: 700;
+$navbar-height: 60px;
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+@function px2em($target, $context: 14) {
+  @return ( ( 1 / $context ) * $target )+0em;
+}
+
+@function px2rem($target, $context: 14) {
+  @return ( ( 1 / $context ) * $target )+0rem;
+}

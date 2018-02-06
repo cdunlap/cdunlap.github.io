@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Navbar />
+    <Hero />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Hero
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import './scss/vars';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
+html, body {
+  height: 100%;
+}
+.text-white {
+  color: $white;
+}
+/*
+html, body {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 14px;
+}
+body {
+  font-family: $primary-font;
+  font-size: 1rem;
+  padding-top: $navbar-height;
+}
+a {
+  color: $primary-color;
+}
+*/
 </style>
