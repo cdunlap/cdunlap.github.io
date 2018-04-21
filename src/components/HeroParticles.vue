@@ -22,8 +22,7 @@ export default {
     scene.background = new THREE.Color(0x000040)
 
     const material = new THREE.SpriteMaterial({
-      map: new THREE.CanvasTexture(this.generateSprite()),
-      blending: THREE.AdditiveBlending
+      map: new THREE.CanvasTexture(this.generateSprite())
     })
 
     for (let i = 0; i < 1000; i++) {
@@ -46,7 +45,7 @@ export default {
 
     this.animate()
   },
-  beforeDestroy() {
+  beforeDestroy () {
 
   },
   methods: {

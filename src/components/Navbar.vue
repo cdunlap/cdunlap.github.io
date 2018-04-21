@@ -1,9 +1,11 @@
 <template>
   <div class="navbar">
+    <!--
     <div class="navbar-monogram">
       <span class="monogram-letter monogram-letter--left">C</span>
       <span class="monogram-letter monogram-letter--right">D</span>
     </div>
+    -->
     <nav class="navbar-nav">
       <a>About Me</a>
       <a>Resume</a>
@@ -21,7 +23,7 @@ export default {
 
 <style lang="scss">
 @import '../scss/vars';
-@import url('https://fonts.googleapis.com/css?family=Expletus+Sans:400,700|Roboto+Condensed:300,400,700|Roboto:300,400,700');
+
 .navbar {
   background: $black;
   height: $navbar-height;

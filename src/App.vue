@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 @import './scss/vars';
-
+@import url('https://fonts.googleapis.com/css?family=Expletus+Sans:400,700|Roboto+Condensed:300,400,700|Roboto:300,400,700');
 #app {
   height: 100%;
 }
@@ -28,7 +28,7 @@ html, body {
   height: 100%;
 }
 .text-white {
-  color: $white;
+  color: $color3;
 }
 /*
 html, body {

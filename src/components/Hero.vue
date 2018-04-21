@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <HeroParticles/>
+    <!-- <HeroParticles/> -->
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -42,7 +42,7 @@ export default {
 
 .hero {
   height: 100%;
-  background: $black;
+  background: $color1;
   position: relative;
 }
 .hero-content {
