@@ -1,0 +1,33 @@
+@import './vars';
+
+.has-text-color1 {
+  color: $color1 !important;
+}
+.has-text-color2 {
+  color: $color2 !important;
+}
+.has-text-color3 {
+  color: $color3 !important;
+}
+.has-text-color4 {
+  color: $color4 !important;
+}
+.has-text-color5 {
+  color: $color5 !important;
+}
+
+.has-background-color1 {
+  background: $color1 !important;
+}
+.has-background-color2 {
+  background: $color2 !important;
+}
+.has-background-color3 {
+  background: $color3 !important;
+}
+.has-background-color4 {
+  background: $color4 !important;
+}
+.has-background-color5 {
+  background: $color5 !important;
+}
