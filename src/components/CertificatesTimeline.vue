@@ -12,7 +12,7 @@
           strong.has-text-color3 {{item.title}}
           br
           | {{item.institution}},&nbsp;
-          a.is-size-7(:href="item.url") {{item.id}}
+          a.is-size-7(:href="item.url" target="_blank") {{item.id}}
 </template>
 
 <script>

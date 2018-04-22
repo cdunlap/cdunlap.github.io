@@ -3926,6 +3926,12 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0"
 
+lorem-ipsum@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-1.0.4.tgz#30b72a3b1e191f55062af8c7dfab291ae4fbd912"
+  dependencies:
+    optimist "~0.3.5"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -4466,6 +4472,12 @@ opn@^5.1.0:
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.2.0.tgz#71fdf934d6827d676cecbea1531f95d354641225"
   dependencies:
     is-wsl "^1.1.0"
+
+optimist@~0.3.5:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.3.7.tgz#c90941ad59e4273328923074d2cf2e7cbc6ec0d9"
+  dependencies:
+    wordwrap "~0.0.2"
 
 optimize-css-assets-webpack-plugin@^3.2.0:
   version "3.2.0"
@@ -6793,6 +6805,10 @@ with@^5.0.0:
 wordwrap@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
+
+wordwrap@~0.0.2:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
 wordwrap@~1.0.0:
   version "1.0.0"

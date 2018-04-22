@@ -20,11 +20,7 @@ export default {
     EducationTimeline,
     CertificatesTimeline,
     WorkTimeline
-  },
-
-  data: () => ({
-
-  })
+  }
 }
 </script>
 
