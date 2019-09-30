@@ -15,39 +15,11 @@
 </template>
 
 <script>
+import { JOBS } from '../data.js'
+
 export default {
   data: () => ({
-    jobs: [{
-      date: 'March 2013 - Current',
-      title: 'Senior Interactive Developer',
-      company: 'Column Five, Inc.',
-      location: 'Irvine, CA (remote in SF Bay Area, CA)'
-    }, {
-      date: 'November 2008 - March 2013',
-      title: 'Co-Founder, Engineer',
-      company: 'Venom Game Labs, LLC',
-      location: 'Kennesaw, GA'
-    }, {
-      date: 'December 2011 - February 2013',
-      title: 'Software Developer',
-      company: 'TRX, Inc. (now SAP Concur)',
-      location: 'Atlanta, GA'
-    }, {
-      date: 'December 2009 - November 2011',
-      title: 'Serious Games Developer',
-      company: 'Research Network, Inc.',
-      location: 'Kennesaw, GA'
-    }, {
-      date: 'September 2008 - March 2010',
-      title: 'Virtual Infrastructure Administrator',
-      company: 'Enterprise Hosting',
-      location: 'Atlanta, GA'
-    }, {
-      date: 'March 2005 - December 2009',
-      title: 'Systems Administrator, Developer',
-      company: 'TRX, Inc. (now SAP Concur)',
-      location: 'Atlanta, GA'
-    }]
+    jobs: JOBS
   })
 }
 </script>

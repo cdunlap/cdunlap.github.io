@@ -1,5 +1,37 @@
 import * as lipsum from 'lorem-ipsum'
 
+export const JOBS = [{
+  date: 'March 2013 - Current',
+  title: 'Senior Interactive Developer',
+  company: 'Column Five, Inc.',
+  location: 'Irvine, CA (remote in SF Bay Area, CA)'
+}, {
+  date: 'November 2008 - March 2013',
+  title: 'Co-Founder, Engineer',
+  company: 'Venom Game Labs, LLC',
+  location: 'Kennesaw, GA'
+}, {
+  date: 'December 2011 - February 2013',
+  title: 'Software Developer',
+  company: 'TRX, Inc. (now SAP Concur)',
+  location: 'Atlanta, GA'
+}, {
+  date: 'December 2009 - November 2011',
+  title: 'Serious Games Developer',
+  company: 'Research Network, Inc.',
+  location: 'Kennesaw, GA'
+}, {
+  date: 'September 2008 - March 2010',
+  title: 'Virtual Infrastructure Administrator',
+  company: 'Enterprise Hosting',
+  location: 'Atlanta, GA'
+}, {
+  date: 'March 2005 - December 2009',
+  title: 'Systems Administrator, Developer',
+  company: 'TRX, Inc. (now SAP Concur)',
+  location: 'Atlanta, GA'
+}]
+
 export const CERTIFICATES = [{
   date: 'August 2, 2017',
   title: 'Scrum Certification Prep +Scrum Master+ Agile Scrum Training',
@@ -47,7 +79,7 @@ export const EDUCATION = [{
 export const LANGUAGES = [{
   name: 'C/C++',
   professional_exp: 3,
-  personal_exp: 16,
+  personal_exp: 17,
   rating: 'Advanced',
   projects: [
     'Firearms Mod',
@@ -55,6 +87,20 @@ export const LANGUAGES = [{
     'GDIS & MMIST, VIKENG @ Research Network, Inc.',
     'A large data visualization project @ Column Five, Inc.',
     'Venom Game Labs, LLC.'
+  ]
+}, {
+  name: 'SQL (MySQL, MSSQL, SQLite)',
+  professional_exp: 13,
+  personal_exp: 13,
+  rating: 'Advanced',
+  projects: [
+    'Something\'s Got to GIF @ Column Five, Inc.',
+    'Media Use in the Middle East @ Column Five, Inc.',
+    'Financial Inclusion Insights by Intermedia @ Column Five, Inc.',
+    'Ocean Health Index @ Column Five, Inc.',
+    'TRX, Inc.',
+    'Venom Game Labs, LLC',
+    'Freelance web projects'
   ]
 }, {
   name: 'C#',
@@ -78,25 +124,34 @@ export const LANGUAGES = [{
     'Venom Game Labs, LLC',
     'Freelance Web Development'
   ]
-}, {
-  name: 'Font-End Web: CSS (incl. SASS &amp; LESS), JavaScript (incl. ES6), HTML5',
-  professional_exp: 9,
-  personal_exp: 13,
+},
+// {
+//   name: 'Font-End Web: CSS (incl. SASS &amp; LESS), JavaScript (incl. ES6), HTML5',
+//   professional_exp: 9,
+//   personal_exp: 13,
+//   rating: 'Advanced',
+//   projects: [
+//     'Groove Glider @ Column Five, Inc.',
+//     'Something\'s Got to GIF @ Column Five, Inc.',
+//     'Beyond The Beat: Robert Johnson @ Column Five, Inc.',
+//     'Sustainability at Warner Bros, @ Column Five, Inc.',
+//     'Warner Bros. in the Global Community @ Column Five, Inc.',
+//     'Media Use in the Middle East @ Column Five, Inc.',
+//     'Financial Inclusion Insights by Intermedia @ Column Five, Inc.',
+//     'Huffington Post: What Kind of Maker Are You? @ Column Five, Inc.',
+//     'Microsoft - Anatomy of a Breach @ Column Five, Inc.',
+//     'Ending Pandemics Community Map @ Column Five, Inc.',
+//     'Ocean Health Index @ Column Five, Inc.'
+//   ]
+// },
+{
+  name: 'HTML',
+  professional_exp: 14,
+  personal_exp: 17,
   rating: 'Advanced',
-  projects: [
-    'Groove Glider @ Column Five, Inc.',
-    'Something\'s Got to GIF @ Column Five, Inc.',
-    'Beyond The Beat: Robert Johnson @ Column Five, Inc.',
-    'Sustainability at Warner Bros, @ Column Five, Inc.',
-    'Warner Bros. in the Global Community @ Column Five, Inc.',
-    'Media Use in the Middle East @ Column Five, Inc.',
-    'Financial Inclusion Insights by Intermedia @ Column Five, Inc.',
-    'Huffington Post: What Kind of Maker Are You? @ Column Five, Inc.',
-    'Microsoft - Anatomy of a Breach @ Column Five, Inc.',
-    'Ending Pandemics Community Map @ Column Five, Inc.',
-    'Ocean Health Index @ Column Five, Inc.'
-  ]
-}, {
+  projects: []
+},
+{
   name: 'JavaScript',
   professional_exp: 14,
   personal_exp: 17,
@@ -124,99 +179,90 @@ export const LANGUAGES = [{
   projects: ['Column Five, Inc.']
 }]
 
-export const TECH = [{
-  name: 'OpenGL',
-  professional_exp: 2,
-  personal_exp: 3,
-  rating: 'Intermediate but out of date',
-  projects: [
-    'GDIS & MMIST, VIKENG @ Research Network, Inc.',
-    'Venom Game Labs, Inc.'
-  ]
-}, {
-  name: 'Unity',
-  professional_exp: 0,
-  personal_exp: 2,
-  rating: 'Beginner',
-  projects: ['No projects yet']
-}, {
-  name: 'Source Engine',
-  professional_exp: 2,
-  personal_exp: 7,
-  rating: 'Advanced but out of date',
-  projects: [
-    'GDIS & MMIST, VIKENG @ Research Network, Inc.',
-    'Firearms: Source',
-    'Firearms 2'
-  ]
-}, {
-  name: 'SQL (MySQL, MSSQL, SQLite)',
-  professional_exp: 13,
-  personal_exp: 13,
-  rating: 'Advanced',
-  projects: [
-    'Something\'s Got to GIF @ Column Five, Inc.',
-    'Media Use in the Middle East @ Column Five, Inc.',
-    'Financial Inclusion Insights by Intermedia @ Column Five, Inc.',
-    'Ocean Health Index @ Column Five, Inc.',
-    'TRX, Inc.',
-    'Venom Game Labs, LLC',
-    'Freelance web projects'
-  ]
-}, {
-  name: 'MongoDB',
-  professional_exp: 1,
-  personal_exp: 2,
-  rating: 'Beginner',
-  projects: ['No projects yet']
-}, {
-  name: 'NodeJS',
-  professional_exp: 3,
-  personal_exp: 3,
-  rating: 'Intermediate',
-  projects: [
-    'Column Five, Inc.'
-  ]
-}, {
-  name: 'SlimPHP',
-  professional_exp: 4,
-  personal_exp: 1,
-  rating: 'Intermediate but out of date',
-  projects: [
-    'Something\'s Got to GIF @ Column Five, Inc.',
-    'Media Use in the Middle East @ Column Five, Inc.',
-    'Ocean Health Index @ Column Five, Inc.'
-  ]
-}, {
-  name: 'AngularJS',
-  professional_exp: 3,
-  personal_exp: 0,
-  rating: 'Intermediate but out of date',
-  projects: [
-    'Ocean Health Index @ Column Five, Inc.',
-    'Another project at Column Five, Inc.'
-  ]
-}, {
-  name: 'KnockoutJS',
-  professional_exp: 5,
-  personal_exp: 0,
-  rating: 'Advanced',
-  projects: [
-    'Media Use in the Middle East @ Column Five, Inc.',
-    'Something\'s Got to GIF @ Column Five, Inc.',
-    'Ending Pandemics Community Map @ Column Five, Inc.',
-    'Financial Inclusion Insights by Intermedia @ Column Five, Inc.'
-  ]
-}, {
-  name: 'VueJS',
-  professional_exp: 2,
-  personal_exp: 0,
-  rating: 'Advanced',
-  projects: [
-    'My portfolio website',
-    'Column Five, Inc'
-  ]
-}]
+export const TECH = [
+  //   {
+  //   name: 'OpenGL',
+  //   professional_exp: 2,
+  //   personal_exp: 3,
+  //   rating: 'Intermediate but out of date',
+  //   projects: [
+  //     'GDIS & MMIST, VIKENG @ Research Network, Inc.',
+  //     'Venom Game Labs, Inc.'
+  //   ]
+  // }, {
+  //   name: 'Unity',
+  //   professional_exp: 0,
+  //   personal_exp: 2,
+  //   rating: 'Beginner',
+  //   projects: ['No projects yet']
+  // }, {
+  //   name: 'Source Engine',
+  //   professional_exp: 2,
+  //   personal_exp: 7,
+  //   rating: 'Advanced but out of date',
+  //   projects: [
+  //     'GDIS & MMIST, VIKENG @ Research Network, Inc.',
+  //     'Firearms: Source',
+  //     'Firearms 2'
+  //   ]
+  // },
+  {
+    name: 'MongoDB',
+    professional_exp: 1,
+    personal_exp: 2,
+    rating: 'Beginner',
+    projects: ['No projects yet']
+  }, {
+    name: 'NodeJS',
+    professional_exp: 3,
+    personal_exp: 3,
+    rating: 'Intermediate',
+    projects: [
+      'Column Five, Inc.'
+    ]
+  },
+  // {
+  //   name: 'SlimPHP',
+  //   professional_exp: 4,
+  //   personal_exp: 1,
+  //   rating: 'Intermediate but out of date',
+  //   projects: [
+  //     'Something\'s Got to GIF @ Column Five, Inc.',
+  //     'Media Use in the Middle East @ Column Five, Inc.',
+  //     'Ocean Health Index @ Column Five, Inc.'
+  //   ]
+  // },
+  {
+    name: 'AngularJS',
+    professional_exp: 3,
+    personal_exp: 0,
+    rating: 'Intermediate but out of date',
+    projects: [
+      'Ocean Health Index @ Column Five, Inc.',
+      'Another project at Column Five, Inc.'
+    ]
+  }, {
+    name: 'KnockoutJS',
+    professional_exp: 5,
+    personal_exp: 0,
+    rating: 'Advanced',
+    projects: [
+      'Media Use in the Middle East @ Column Five, Inc.',
+      'Something\'s Got to GIF @ Column Five, Inc.',
+      'Ending Pandemics Community Map @ Column Five, Inc.',
+      'Financial Inclusion Insights by Intermedia @ Column Five, Inc.'
+    ]
+  }, {
+    name: 'VueJS',
+    professional_exp: 2,
+    personal_exp: 0,
+    rating: 'Advanced',
+    projects: [
+      'My portfolio website',
+      'Column Five, Inc'
+    ]
+  }
+]
 
 export const PROJECTS = [{
   title: 'Firearms: Source',
