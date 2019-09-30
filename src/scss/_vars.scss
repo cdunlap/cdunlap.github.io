@@ -7,6 +7,12 @@ $color3: rgba(240, 237, 238, 1);
 $color4: rgba(35, 116, 171, 1);
 $color5: rgba(89, 89, 89, 1);
 
+// $color1: #FAFAFA;
+// $color2: #77A0BB;
+// $color3: #395590;
+// $color4: #8B5A62;
+// $color5: #1A1B28;
+
 @function px2em($target, $context: 14) {
   @return ( ( 1 / $context ) * $target )+0em;
 }

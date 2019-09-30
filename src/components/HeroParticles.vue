@@ -12,38 +12,38 @@ const windowHalfY = window.innerHeight / 2
 export default {
   name: 'HeroParticles',
   mounted () {
-    const width = this.$el.clientWidth
-    const height = this.$el.clientHeight
-
-    const camera = new THREE.PerspectiveCamera(75, width, height)
-    camera.position.z = 1000
-
-    const scene = new THREE.Scene()
-    scene.background = new THREE.Color(0x000040)
-
-    const material = new THREE.SpriteMaterial({
-      map: new THREE.CanvasTexture(this.generateSprite())
-    })
-
-    for (let i = 0; i < 1000; i++) {
-      const particle = new THREE.Sprite(material)
-      this.initParticle(particle, i * 10)
-      scene.add(particle)
-    }
-
-    const renderer = new THREE.WebGLRenderer()
-    renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(width, height)
-
-    this.$el.appendChild(renderer.domElement)
-
-    document.addEventListener('mousemove', this.onDocumentMouseMove, false)
-
-    this.camera = camera
-    this.scene = scene
-    this.renderer = renderer
-
-    this.animate()
+    // const width = this.$el.clientWidth
+    // const height = this.$el.clientHeight
+    //
+    // const camera = new THREE.PerspectiveCamera(75, width, height)
+    // camera.position.z = 1000
+    //
+    // const scene = new THREE.Scene()
+    // scene.background = new THREE.Color(0x000040)
+    //
+    // const material = new THREE.SpriteMaterial({
+    //   map: new THREE.CanvasTexture(this.generateSprite())
+    // })
+    //
+    // for (let i = 0; i < 1000; i++) {
+    //   const particle = new THREE.Sprite(material)
+    //   this.initParticle(particle, i * 10)
+    //   scene.add(particle)
+    // }
+    //
+    // const renderer = new THREE.WebGLRenderer()
+    // renderer.setPixelRatio(window.devicePixelRatio)
+    // renderer.setSize(width, height)
+    //
+    // this.$el.appendChild(renderer.domElement)
+    //
+    // document.addEventListener('mousemove', this.onDocumentMouseMove, false)
+    //
+    // this.camera = camera
+    // this.scene = scene
+    // this.renderer = renderer
+    //
+    // this.animate()
   },
   beforeDestroy () {
 

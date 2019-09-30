@@ -6,9 +6,6 @@ section.section.has-background-color1#contact
     p.is-size-4
       a(href='http://www.linkedin.com/in/cdunlap' target='_blank')
         i.fab.fa-linkedin-in
-      | &nbsp;
-      a(href='https://twitter.com/dunlapcj' target='_blank')
-        i.fab.fa-twitter
 </template>
 
 <script>

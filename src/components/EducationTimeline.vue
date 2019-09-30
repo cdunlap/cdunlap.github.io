@@ -19,19 +19,10 @@
 </template>
 
 <script>
+import { EDUCATION } from '../data.js'
 export default {
   data: () => ({
-    education: [{
-      years: '2007 - 2010',
-      degree: 'BS, Game and Simulation Programming',
-      school: 'DeVry University Online',
-      location: 'Graduated with honors' // Yeah I know this isn't location
-    }, {
-      years: '2003 - 2005',
-      degree: 'AAS, Computer Information Systems - Programmer/Analyst',
-      school: 'Chippewa Valley Technical College',
-      location: 'Eau Claire, WI'
-    }]
+    education: EDUCATION
   })
 }
 </script>
