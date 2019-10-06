@@ -1,5 +1,5 @@
 <template lang="pug">
-.card
+.card.card--equalheight
   .card-image
     figure.image.is-16by9
       img(v-bind:src="image")
@@ -19,5 +19,13 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+.card--equalheight {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .card-footer {
+    margin-top: auto;
+  }
+}
 </style>

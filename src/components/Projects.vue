@@ -4,7 +4,7 @@ section.section.has-background-color2
     h1.title.has-text-color3 Projects
 
     .project-list.columns.is-multiline
-      .column.is-4(v-for='(project, idx) in projects' v-bind:key='idx')
+      .column.is-half-tablet.is-one-third-desktop(v-for='(project, idx) in projects' v-bind:key='idx')
         ProjectCard(:title='project.title' :image='project.image' :description='project.description' :liveurl='project.liveurl')
 </template>
 
