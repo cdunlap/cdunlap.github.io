@@ -10,8 +10,8 @@ section.section.has-background-color2
 </template>
 
 <script>
-import ProjectCard from './ProjectCard'
-import { PROJECTS } from '../data.js'
+import ProjectCard from '@/components/ProjectCard'
+import { PROJECTS } from '@/data.js'
 
 export default {
   components: {

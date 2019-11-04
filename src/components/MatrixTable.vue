@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { LANGUAGES } from '../data.js'
+import { LANGUAGES } from '@/data.js'
 export default {
   props: {
     title: {

@@ -10,10 +10,8 @@ nav.navbar.is-fixed-top(role='navigation' aria-label='main navigation')
 
   .navbar-menu(:class="{'is-active': isActive}")
     .navbar-end
-      a.navbar-item About Me
-      a.navbar-item Resume
-      a.navbar-item Projects
-      a.navbar-item Contact
+      router-link.navbar-item(:to="{name: 'home'}") Home
+      router-link.navbar-item(:to="{name: 'projects'}") Projects
 </template>
 
 <script>

@@ -1,4 +1,4 @@
-import * as lipsum from 'lorem-ipsum'
+import { loremIpsum } from 'lorem-ipsum'
 
 export const JOBS = [{
   date: 'March 2013 - Current',
@@ -307,12 +307,12 @@ export const PROJECTS = [{
 }, {
   title: 'Ocean Health Index Data Explorer',
   image: 'https://picsum.photos/1600/900/?random',
-  description: lipsum(),
+  description: loremIpsum(),
   liveurl: 'http://data.oceanhealthindex.org'
 }, {
   title: 'Column Five Brand Guidelines',
   image: 'https://picsum.photos/1600/900/?random',
-  description: lipsum(),
+  description: loremIpsum(),
   liveurl: 'https://brand.columnfivemedia.com'
 }, {
   title: 'Skoll Global Threats Fund Community Map',

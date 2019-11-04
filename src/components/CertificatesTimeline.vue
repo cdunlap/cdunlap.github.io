@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { CERTIFICATES } from '../data.js'
+import { CERTIFICATES } from '@/data.js'
 export default {
   data: () => ({
     certs: CERTIFICATES

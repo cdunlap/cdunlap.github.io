@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { JOBS } from '../data.js'
+import { JOBS } from '@/data.js'
 
 export default {
   data: () => ({

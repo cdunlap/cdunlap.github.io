@@ -11,9 +11,9 @@ section.section.has-background-color3#skills
 </template>
 
 <script>
-import MatrixTable from './MatrixTable'
+import MatrixTable from '@/components/MatrixTable'
 import VueApexCharts from 'vue-apexcharts'
-import { LANGUAGES, TECH } from '../data.js'
+import { LANGUAGES, TECH } from '@/data.js'
 
 const chartOptions = {
   colors: ['#2374AB', '#0A090C']

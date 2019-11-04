@@ -11,9 +11,9 @@ section.section.has-background-color1#resume
 </template>
 
 <script>
-import EducationTimeline from './EducationTimeline'
-import CertificatesTimeline from './CertificatesTimeline'
-import WorkTimeline from './WorkTimeline'
+import EducationTimeline from '@/components/EducationTimeline'
+import CertificatesTimeline from '@/components/CertificatesTimeline'
+import WorkTimeline from '@/components/WorkTimeline'
 
 export default {
   components: {
