@@ -5,7 +5,8 @@ section.section.has-background-color2
 
     .project-list.columns.is-multiline
       .column.is-4(v-for='(project, idx) in projects' v-bind:key='idx')
-        ProjectCard(:title='project.title' :image='project.image' :description='project.description' :liveurl='project.liveurl')
+        ProjectCard(:title='project.title' :image='project.image'
+          :description='project.description' :liveurl='project.liveurl')
 </template>
 
 <script>

@@ -19,5 +19,12 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scoped>
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card-content {
+  flex: 1
+}
 </style>

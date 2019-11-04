@@ -2,10 +2,11 @@
 section.section.has-background-color3#skills
   .container
     h1.title Skills by Years of Experience
-    VueApexCharts(type="bar", :options="languageChart.options", :series="languageChart.series")
+    VueApexCharts(type="bar", :options="languageChart.options",
+      :series="languageChart.series")
     //-
     //- VueApexCharts(type="bar", :options="techChart.options", :series="techChart.series")
-    h1.title Skills by Proficiency
+    //- h1.title Skills by Proficiency
     //- VueApexChart(type="bar", :options="proficiencyChart.options", :series="proficiencyChart.series")
 </template>
 
