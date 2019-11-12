@@ -9,7 +9,7 @@ export default function (doc) {
     return '/projects'
   }
   if (doc.type === 'project') {
-    return '/project/' + doc.slugs[0]
+    return '/project/' + doc.uid
   }
   return '/not-found'
 }

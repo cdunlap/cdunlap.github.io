@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+main {
+  padding-top: 3.25rem;
+}
 </style>

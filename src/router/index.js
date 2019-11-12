@@ -19,7 +19,7 @@ const routes = [
     component: Projects
   },
   {
-    path: '/project/{slug}',
+    path: '/project/:uid',
     name: 'project',
     component: Project
   }
