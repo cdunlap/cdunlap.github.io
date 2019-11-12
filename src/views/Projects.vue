@@ -1,13 +1,19 @@
 <template lang="pug">
-  Projects(:projects="projects")
+  section.section.has-background-color2
+    .container
+      h1.title.has-text-color3 Projects
+
+      .project-list.columns.is-multiline
+        .column.is-4(v-for="project in projects" :key="project.id")
+          ProjectCard(:project="project")
 </template>
 
 <script>
-import Projects from '@/components/Projects'
+import ProjectCard from '@/components/ProjectCard'
 
 export default {
   components: {
-    Projects
+    ProjectCard
   },
   data: () => ({
     projects: []
@@ -23,4 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.project-list .column {
+  display: flex;
+}
 </style>
