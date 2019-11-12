@@ -1,21 +1,20 @@
 <template lang="pug">
-.card
+router-link(:to="$prismic.linkResolver(project)").card
   .card-image
     figure.image.is-16by9
-      img(v-bind:src="image")
+      img(v-if="!project.data.hero_image.url" src="https://picsum.photos/800/450/?random")
+      prismic-image(v-if="project.data.hero_image.url" :field='project.data.hero_image')
   .card-content
-    .title {{title}}
-    p {{description}}
+    .title {{$prismic.richTextAsPlain(project.data.name)}}
+    prismic-rich-text(:field='project.data.description')
   footer.card-footer
-    a.card-footer-item(v-if='url' :url='url') See More
-    a.card-footer-item(v-if='liveurl' :href='liveurl' target='_blank')
+    a.card-footer-item(v-if='project.data.live_url.url' :href='project.data.live_url.url' target='_blank') Visit Site &nbsp;
       i.fa.fa-external-link-alt
-      | &nbsp; Visit Site
 </template>
 
 <script>
 export default {
-  props: ['title', 'image', 'description', 'liveurl', 'url']
+  props: ['project']
 }
 </script>
 
@@ -23,6 +22,9 @@ export default {
 .card {
   display: flex;
   flex-direction: column;
+  &:hover {
+    color: inherit;
+  }
 }
 .card-content {
   flex: 1
