@@ -2,17 +2,18 @@
 section.section.has-background-color3#skills
   .container
     h1.title Skills by Years of Experience
-    VueApexCharts(type="bar", :options="languageChart.options", :series="languageChart.series")
+    VueApexCharts(type="bar", :options="languageChart.options",
+      :series="languageChart.series")
     //-
     //- VueApexCharts(type="bar", :options="techChart.options", :series="techChart.series")
-    h1.title Skills by Proficiency
+    //- h1.title Skills by Proficiency
     //- VueApexChart(type="bar", :options="proficiencyChart.options", :series="proficiencyChart.series")
 </template>
 
 <script>
-import MatrixTable from './MatrixTable'
+import MatrixTable from '@/components/MatrixTable'
 import VueApexCharts from 'vue-apexcharts'
-import { LANGUAGES, TECH } from '../data.js'
+import { LANGUAGES, TECH } from '@/data.js'
 
 const chartOptions = {
   colors: ['#2374AB', '#0A090C']

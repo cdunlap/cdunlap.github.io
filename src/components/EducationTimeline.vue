@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { EDUCATION } from '../data.js'
+import { EDUCATION } from '@/data.js'
 export default {
   data: () => ({
     education: EDUCATION
