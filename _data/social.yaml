@@ -8,15 +8,15 @@
   icon: icon-linkedin
   account: cdunlap
 
-- title: Twitter
-  url: http://www.twitter.com/dunlapcj
-  icon: icon-twitter
-  account: dunlapcj
+# - title: Twitter
+#   url: http://www.twitter.com/dunlapcj
+#   icon: icon-twitter
+#   account: dunlapcj
 
-- title: Google+
-  url: http://www.google.com/+CaleDunlap
-  icon: icon-google-plus
-  account: CaleDunlap
+# - title: Google+
+#   url: http://www.google.com/+CaleDunlap
+#   icon: icon-google-plus
+#   account: CaleDunlap
 
 - title: Stack Overflow
   url: http://stackoverflow.com/users/527632/cale
@@ -28,17 +28,17 @@
 #   icon: icon-new-tab
 #   account: Code Project Profile
 
-- title: YouTube
-  url: https://www.youtube.com/user/dunlapcj
-  icon: icon-youtube
-  account: dunlapcj
+# - title: YouTube
+#   url: https://www.youtube.com/user/dunlapcj
+#   icon: icon-youtube
+#   account: dunlapcj
 
-- title: Twitch
-  url: http://www.twitch.tv/dunlapcj
-  icon: icon-twitch
-  account: dunlapcj
-
-- title: Steam
-  url: http://steamcommunity.com/id/Mazor/
-  icon: icon-steam
-  account: Mazor
+# - title: Twitch
+#   url: http://www.twitch.tv/dunlapcj
+#   icon: icon-twitch
+#   account: dunlapcj
+#
+# - title: Steam
+#   url: http://steamcommunity.com/id/Mazor/
+#   icon: icon-steam
+#   account: Mazor
