@@ -1,9 +1,12 @@
 <template lang="pug">
   main#project(v-if="Object.keys(project).length > 0")
-    section.hero.has-background-color2.is-large#hero
-      .hero-body(:class="{'has-bg':project.hero_image.url}" :style="{backgroundImage: `url(${project.hero_image.url})`}")
-        .container
-          h1.title {{$prismic.richTextAsPlain(project.name)}}
+    //- section.hero.has-background-color2.is-large#hero
+    //-   .hero-body(:class="{'has-bg':project.hero_image.url}" :style="{backgroundImage: `url(${project.hero_image.url})`}")
+    //-     .container
+    //-       h1.title {{$prismic.asText(project.name)}}
+    .has-background-color2.is-large
+      .container
+        h1.title {{$prismic.asText(project.name)}}
     .has-background-color3
       section.description
         .container
@@ -22,14 +25,13 @@
 
 <script>
 export default {
-  data: () => ({
-    project: {}
-  }),
-  created () {
-    this.$prismic.client.getByUID('project', this.$route.params.uid)
-      .then(response => {
-        this.project = response.data
-      })
+  async asyncData({$prismic, params, error}) {
+    try {
+      const project = (await $prismic.api.getByUID('project', params.uid)).data
+      return { project }
+    } catch (e) {
+      error({statusCode: 404, message: 'Page not found'})
+    }
   }
 }
 </script>

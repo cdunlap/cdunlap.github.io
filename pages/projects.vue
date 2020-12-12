@@ -2,7 +2,6 @@
   section.section.has-background-color2
     .container
       h1.title.has-text-color3 Projects
-
       .project-list.columns.is-multiline
         .column.is-4(v-for="project in projects" :key="project.id")
           ProjectCard(:project="project")
@@ -15,15 +14,15 @@ export default {
   components: {
     ProjectCard
   },
-  data: () => ({
-    projects: []
-  }),
-  created () {
-    this.$prismic.client.query(
-      this.$prismic.Predicates.at('document.type', 'project'))
-      .then(response => {
-        this.projects = response.results
-      })
+  async asyncData({$prismic, error}) {
+    try {
+      const projects = (await $prismic.api.query(
+        $prismic.predicates.at('document.type', 'project')
+      )).results
+      return { projects }
+    } catch (e) {
+      error({statusCode: 404, message: 'Page not found'})
+    }
   }
 }
 </script>
