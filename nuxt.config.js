@@ -8,7 +8,7 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'Official Nuxt.js starter for CodeSandBox' }
+        { hid: 'description', name: 'description', content: 'I\'m a syntactically diverse software developer living in the San Francisco Bay Area of the United States.' }
       ]
     },
   
