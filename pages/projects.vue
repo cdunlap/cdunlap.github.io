@@ -9,6 +9,7 @@
 
 <script>
 import ProjectCard from '@/components/ProjectCard'
+import { gsap } from 'gsap'
 
 export default {
   components: {
@@ -23,6 +24,17 @@ export default {
     } catch (e) {
       error({statusCode: 404, message: 'Page not found'})
     }
+  },
+  mounted() {
+    gsap.from('.project-list .card', {
+      duration: 1,
+      y: "-20",
+      opacity: 0,
+      delay: 0.5,
+      stagger: 0.15,
+      ease: 'power4.out',
+      force3D: true
+    })
   }
 }
 </script>

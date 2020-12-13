@@ -14,8 +14,21 @@
 </template>
 
 <script>
+import { gsap } from 'gsap'
+
 export default {
   props: ["data"],
+  mounted() {
+    gsap.from('.work .timeline-item', {
+      duration: 1,
+      y: "-20",
+      opacity: 0,
+      delay: 0.5,
+      stagger: 0.15,
+      ease: 'power4.out',
+      force3D: true
+    })
+  }
 };
 </script>
 
