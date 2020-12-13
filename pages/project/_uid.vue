@@ -6,11 +6,13 @@
     //-       h1.title {{$prismic.asText(project.name)}}
     .has-background-color2.is-large
       .container
-        h1.title {{$prismic.asText(project.name)}}
+        .content
+          h1.title {{$prismic.asText(project.name)}}
     .has-background-color3
       section.description
         .container
-          prismic-rich-text(:field="project.description_long")
+          .content
+            prismic-rich-text(:field="project.description_long")
       section.media(v-for="(slice, idx) in project.body" :key="`slice-${idx}`")
         .container
           template(v-if="slice.slice_type === 'project_photos'")

@@ -1,7 +1,7 @@
 <template lang="pug">
 .card
   .card-image
-    figure.image.is-16by9
+    figure.image
       img(
         v-if="!project.data.hero_image.url",
         src="https://picsum.photos/800/450/?random"
@@ -12,7 +12,9 @@
       )
   .card-content
     .title {{ $prismic.asText(project.data.name) }}
-    prismic-rich-text(:field="project.data.description")
+    prismic-rich-text.content(:field="project.data.description")
+    .tags
+      span.tag.is-primary(v-for="tag in project.tags") {{tag}}
   footer.card-footer
     nuxt-link.card-footer-item(:to="link") View Project
     a.card-footer-item(
