@@ -37,6 +37,11 @@ import EducationTimeline from "@/components/EducationTimeline";
 import CertificatesTimeline from "@/components/CertificatesTimeline";
 import WorkTimeline from "@/components/WorkTimeline";
 import moment from "moment";
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
+if(process.client) {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 export default {
   name: "home",
@@ -49,6 +54,23 @@ export default {
     showLanguageChart() {
       return Object.keys(this.languageChart).length > 0;
     },
+  },
+  mounted() {
+    gsap.from('.navbar-item.me', {
+      x: -100,
+      autoAlpha: 0,
+      scrollTrigger: {
+        start: 'bottom top+=20%',
+        trigger: '.hero',
+        toggleActions: 'play none none reverse'
+      }
+    })
+  },
+  destroyed() {
+    gsap.to('.navbar-item.me', {
+      x: 0,
+      autoAlpha: 1
+    })
   },
   async asyncData({ $prismic, error }) {
     try {

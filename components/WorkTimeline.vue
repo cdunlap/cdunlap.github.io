@@ -1,6 +1,6 @@
 <template lang="pug">
 .work
-  .timeline
+  .timeline(ref="timeline")
     .timeline-header
       span.tag.is-medium.has-background-color4.has-text-color3 Current
     .timeline-item(v-for="(item, idx) in data", v-bind:key="idx")
@@ -15,19 +15,25 @@
 
 <script>
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
+if(process.client) {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 export default {
   props: ["data"],
   mounted() {
-    gsap.from('.work .timeline-item', {
-      duration: 1,
-      y: "-20",
-      opacity: 0,
-      delay: 0.5,
-      stagger: 0.15,
-      ease: 'power4.out',
-      force3D: true
-    })
+    const $timeline = this.$refs.timeline;
+    var tl = gsap.timeline({
+      scrollTrigger: $timeline
+    });
+    tl.from($timeline, { opacity: 0, duration: 1})
+    tl.from($timeline.querySelectorAll('.timeline-marker'), {
+      opacity: 0, duration: 1, stagger: 0.2
+    }, "timelineItemIn")
+    tl.from($timeline.querySelectorAll('.timeline-content'), {
+      opacity: 0, x: 100, stagger: .2, 
+    }, "timelineItemIn")
   }
 };
 </script>

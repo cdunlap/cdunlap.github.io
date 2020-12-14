@@ -1,6 +1,8 @@
 <template lang="pug">
 nav.navbar.is-fixed-top(role="navigation", aria-label="main navigation")
   .navbar-brand
+    nuxt-link.navbar-item.me(to="/")
+      span Cale Dunlap
     //- Burger must be last
     a.navbar-burger(
       :class="{ 'is-active': isActive }",
@@ -23,6 +25,7 @@ nav.navbar.is-fixed-top(role="navigation", aria-label="main navigation")
 export default {
   data: () => ({
     isActive: false,
-  }),
+  })
 };
 </script>
+
