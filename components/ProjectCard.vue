@@ -1,5 +1,5 @@
 <template lang="pug">
-.card
+.card(@mouseover="playVideo()" @mouseout="stopVideo()" @click="openProject()")
   .card-image
     figure.image
       img(
@@ -7,9 +7,11 @@
         src="https://picsum.photos/800/450/?random"
       )
       prismic-image(
-        v-if="project.data.hero_image.url",
+        v-if="project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
         :field="project.data.hero_image"
       )
+      video(v-if="project.data.hero_video && project.data.hero_video.url" ref="video"
+        :src="project.data.hero_video.url" autoplay loop mute)
   .card-content
     .title {{ $prismic.asText(project.data.name) }}
     prismic-rich-text.content(:field="project.data.description")
@@ -29,8 +31,26 @@
 import LinkResolver from '@/plugins/link-resolver'
 export default {
   props: ["project"],
+  data: () => ({
+    link: null,
+  }),
   created() {
     this.link = LinkResolver(this.project)
+  },
+  methods: {
+    playVideo() {
+      // if(this.$refs.video) {
+      //   this.$refs.video.play();
+      // }
+    },
+    stopVideo() {
+      // if(this.$refs.video) {
+      //   this.$refs.video.pause();
+      // }
+    },
+    openProject() {
+
+    }
   }
 };
 </script>
