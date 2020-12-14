@@ -3,7 +3,7 @@
   .card-image
     figure.image
       img(
-        v-if="!project.data.hero_image.url",
+        v-if="!project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
         src="https://picsum.photos/800/450/?random"
       )
       prismic-image(
