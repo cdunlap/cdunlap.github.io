@@ -29,3 +29,9 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.navbar .me {
+  opacity: 0;
+  transform: translate(-100px, 0);
+}
+</style>

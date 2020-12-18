@@ -20,6 +20,7 @@ main#home
   section#skills.section.has-background-color3
     .container
       h1.title {{ $prismic.asText(home.skills_title) }}
+      prismic-rich-text(:field="home.skills_content")
       //- VueApexCharts(
       //-   v-if="showLanguageChart",
       //-   type="bar",
@@ -56,9 +57,9 @@ export default {
     },
   },
   mounted() {
-    gsap.from('.navbar-item.me', {
-      x: -100,
-      autoAlpha: 0,
+    this.navbarTween = gsap.to('.navbar-item.me', {
+      x: 0,
+      autoAlpha: 1,
       scrollTrigger: {
         start: 'bottom top+=20%',
         trigger: '.hero',
@@ -67,7 +68,8 @@ export default {
     })
   },
   destroyed() {
-    gsap.to('.navbar-item.me', {
+    this.navbarTween.kill();
+    gsap.set('.navbar-item.me', {
       x: 0,
       autoAlpha: 1
     })

@@ -18,7 +18,8 @@ export default {
     */
     css: [
       '@/assets/scss/_bulma.scss',
-      '@/assets/scss/_helpers.scss'
+      '@/assets/scss/_helpers.scss',
+      '@fortawesome/fontawesome-free/css/all.css'
     ],
   
     /*
