@@ -1,24 +1,11 @@
 <template lang="pug">
-nav.navbar.is-fixed-top(role="navigation", aria-label="main navigation")
-  .navbar-brand
-    nuxt-link.navbar-item.me(to="/")
-      span Cale Dunlap
-    //- Burger must be last
-    a.navbar-burger(
-      :class="{ 'is-active': isActive }",
-      role="button",
-      aria-label="menu",
-      aria-expanded="false",
-      @click="isActive = !isActive"
-    )
-      span(aria-hidden="true")
-      span(aria-hidden="true")
-      span(aria-hidden="true")
-
-  .navbar-menu(:class="{ 'is-active': isActive }")
-    .navbar-end
-      nuxt-link.navbar-item(to="/") Home
-      nuxt-link.navbar-item(:to="{ name: 'projects' }") Projects
+b-navbar(toggleable="lg" type="dark" variant="dark" fixed="top")
+  b-navbar-brand.me(href="/") Cale Dunlap
+  b-navbar-toggle(target="nav-collapse")
+  b-collapse#nav-collapse(is-nav)
+    b-navbar-nav.ml-auto
+      b-nav-item(to="/") Home
+      b-nav-item(:to="{name: 'projects' }") Projects
 </template>
 
 <script>
@@ -30,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-.navbar .me {
+.me {
   opacity: 0;
   transform: translate(-100px, 0);
 }

@@ -8,7 +8,7 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'I\'m a syntactically diverse software developer living in the San Francisco Bay Area of the United States.' }
+        { hid: 'description', name: 'description', content: 'I\'m a syntactically diverse software developer living in the Reno, NV area of the United States.' }
       ]
     },
   
@@ -17,8 +17,7 @@ export default {
     ** Doc: https://nuxtjs.org/api/configuration-css
     */
     css: [
-      '@/assets/scss/_bulma.scss',
-      '@/assets/scss/_helpers.scss',
+      // '@/assets/scss/_helpers.scss',
       '@fortawesome/fontawesome-free/css/all.css'
     ],
   
@@ -29,7 +28,8 @@ export default {
     plugins: [
       // '~/plugins/prismic-vue.js'
       // { src: '~/plugins/v-lightbox.js', mode: 'client' }
-      { src: '~/plugins/vue-gallery.js', mode: 'client' }
+      { src: '~/plugins/vue-gallery.js', mode: 'client' },
+      { src: '~/plugins/bootstrap-vue.js' }
     ],
   
     /*
@@ -66,6 +66,9 @@ export default {
     generate: {
         fallback: '404.html'
     },
-    target: 'static'
+    target: 'static',
+    server: {
+      host: '0.0.0.0'
+    }
   };
   

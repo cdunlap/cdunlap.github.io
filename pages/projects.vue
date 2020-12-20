@@ -1,20 +1,36 @@
 <template lang="pug">
-  section.section.has-background-color2
-    .container
-      h1.title.has-text-color3 Projects
-      .project-list.columns.is-multiline
-        .column.is-4(v-for="project in projects" :key="project.id")
-          ProjectCard(:project="project")
+main
+  b-container
+    h1.mb-4 Projects
+    b-card-group(columns)
+      b-card(v-for="project in projects" :key="project.id")
+        template(slot="header")
+          figure.image
+            img.img-fluid(
+              v-if="!project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
+              src="https://picsum.photos/800/450/?random"
+            )
+            prismic-image.img-fluid(
+              v-if="project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
+              :field="project.data.hero_image"
+            )
+            .embed-responsive.embed-responsive-16by9(v-if="project.data.hero_video && project.data.hero_video.url")
+              video(ref="video"
+                :src="project.data.hero_video.url" autoplay loop mute)
+        b-card-text {{$prismic.asText(project.data.description)}}
+        .d-flex.justify-content-between
+          b-button(:to="LinkResolver(project)" variant="primary") View Project
+          b-button(v-if="project.data.live_url.url"
+            :href="project.data.live_url.url"
+            target="_blank") Visit Site &nbsp;
+              i.fa.fa-external-link-alt
 </template>
 
 <script>
-import ProjectCard from '@/components/ProjectCard'
+import LinkResolver from '@/plugins/link-resolver'
 import { gsap } from 'gsap'
 
 export default {
-  components: {
-    ProjectCard
-  },
   async asyncData({$prismic, error}) {
     try {
       const projects = (await $prismic.api.query(
@@ -25,7 +41,11 @@ export default {
       error({statusCode: 404, message: 'Page not found'})
     }
   },
+  methods: {
+    LinkResolver
+  },
   mounted() {
+    /*
     gsap.from('.project-list .card', {
       duration: 1,
       y: "-20",
@@ -35,6 +55,7 @@ export default {
       ease: 'power4.out',
       force3D: true
     })
+    */
   }
 }
 </script>

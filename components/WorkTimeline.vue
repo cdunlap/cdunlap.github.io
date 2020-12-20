@@ -23,6 +23,7 @@ if(process.client) {
 export default {
   props: ["data"],
   mounted() {
+    /*
     const $timeline = this.$refs.timeline;
     var tl = gsap.timeline({
       scrollTrigger: $timeline
@@ -34,6 +35,7 @@ export default {
     tl.from($timeline.querySelectorAll('.timeline-content'), {
       opacity: 0, x: 100, stagger: .2, 
     }, "timelineItemIn")
+    */
   }
 };
 </script>

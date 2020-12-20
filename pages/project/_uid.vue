@@ -1,39 +1,38 @@
 <template lang="pug">
-  main#project.has-background-color3(v-if="Object.keys(project).length > 0")
-    //- section.hero.has-background-color2.is-large#hero
-    //-   .hero-body(:class="{'has-bg':project.hero_image.url}" :style="{backgroundImage: `url(${project.hero_image.url})`}")
-    //-     .container
-    //-       h1.title {{$prismic.asText(project.data.name)}}
-    section
-      .container
-        .content
-          h1.title {{$prismic.asText(project.data.name)}}
-          .tags
-            span.tag.is-primary(v-for="tag in project.tags") {{tag}}
-          .live.my-4(v-if="project.data.live_url.url")
-            strong Live link:&nbsp;
-              a(:href="project.data.live_url.url" target="_blank") {{project.data.live_url.url}}
-          video(v-if="project.data.demo_video && project.data.demo_video.url"
-            :src="project.data.demo_video.url" autoplay muted controls)
-          prismic-rich-text.py-4(:field="project.data.description_long")
+  main#project(v-if="Object.keys(project).length > 0")
+    b-jumbotron(:fluid="true" :header="$prismic.asText(project.data.name)" :lead="$prismic.asText(project.data.description)")
+      .tags
+        b-badge.mr-1(v-for="tag in project.tags") {{tag}}
+      .live(v-if="project.data.live_url.url")
+        strong Live link: &nbsp;
+          a(:href="project.data.live_url.url" target="_blank") {{project.data.live_url.url}}
 
-    section.media(v-for="(slice, idx) in project.data.body" :key="`slice-${idx}`")
-      .container
-        template(v-if="slice.slice_type === 'project_photos'")
-          h2.title Photos
-          v-gallery(:images="slice.items.map(i => i.project_photo.url)"
-            :index="photoIndex" @close="photoIndex = null")
-          .gallery-photos
-            figure(v-for="(item, idx) in slice.items" :key="idx")
-              prismic-image.gallery-image(
-                :field="item.project_photo"
-                @click="photoIndex = idx")
-        template(v-if="slice.slice_type === 'project_videos'")
-          h2.title Videos
-          .gallery-videos
-            prismic-embed.gallery-video(v-for="(item, idx) in slice.items"
-              :key="idx"
-              :field="item.project_video")
+    b-container
+      b-row
+        b-col(md="6")
+          prismic-rich-text(:field="project.data.description_long")
+        b-col(md="6")
+          .embed-responsive.embed-responsive-16by9(v-if="project.data.demo_video && project.data.demo_video.url")
+            video(:src="project.data.demo_video.url" autoplay muted controls)
+          prismic-image.img-fluid(v-if="project.data.hero_image && project.data.hero_image.url"
+            :field="project.data.hero_image")
+
+    b-container.media(v-for="(slice, idx) in project.data.body" :key="`slice-${idx}`")
+      template(v-if="slice.slice_type === 'project_photos'")
+        h2 Photos
+        v-gallery(:images="slice.items.map(i => i.project_photo.url)"
+          :index="photoIndex" @close="photoIndex = null")
+        .gallery-photos
+          figure(v-for="(item, idx) in slice.items" :key="idx")
+            prismic-image.gallery-image(
+              :field="item.project_photo"
+              @click="photoIndex = idx")
+      template(v-if="slice.slice_type === 'project_videos'")
+        h2 Videos
+        .gallery-videos
+          prismic-embed.gallery-video(v-for="(item, idx) in slice.items"
+            :key="idx"
+            :field="item.project_video")
 </template>
 
 <script>

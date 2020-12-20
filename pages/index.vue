@@ -1,42 +1,48 @@
 <template lang="pug">
 main#home
-  section#hero.hero.has-background-color2.is-large
-    .hero-body
-      .container
-        h1.title.has-text-color3 {{ $prismic.asText(home.hero_title) }}
-        prismic-rich-text.subtitle(:field="home.hero_content")
-  section#resume.section.has-background-color1
-    .container
-      .columns
-        .column.is-one-half-tablet
-          h1.title.has-text-color3 {{ $prismic.asText(home.institutional_education_title) }}
-          EducationTimeline(:data="home.education")
-          h1.title.has-text-color3 {{ $prismic.asText(home.certificates_courses_title) }}
-          CertificatesTimeline(:data="home.certificates")
+  section#hero.has-background-color2
+    b-jumbotron(
+      :header="$prismic.asText(home.hero_title)"
+      bg-variant="color2"
+      text-variant="color3"
+      :fluid="true")
+      prismic-rich-text.subtitle(:field="home.hero_content")
 
-        .column.is-one-half-tablet
-          h1.title.has-text-color3 {{ $prismic.asText(home.work_history_title) }}
+  section#resume
+    b-container
+      b-row
+        b-col(md="4")
+          h1.title {{ $prismic.asText(home.institutional_education_title) }}
+          EducationTimeline(:data="home.education")
+        b-col(md="4")
+          h1.title {{ $prismic.asText(home.certificates_courses_title) }}
+          CertificatesTimeline(:data="home.certificates")
+        b-col(md="4")
+          h1.title {{ $prismic.asText(home.work_history_title) }}
           WorkTimeline(:data="home.work_history")
-  section#skills.section.has-background-color3
-    .container
+  section#skills.mb-4
+    b-container
       h1.title {{ $prismic.asText(home.skills_title) }}
       prismic-rich-text(:field="home.skills_content")
+      b-row.skills
+        SkillBar.col-sm-6.col-md-4(v-for="skill in home.skills" :key="$prismic.asText(skill.name)" :skill="skill")
       //- VueApexCharts(
       //-   v-if="showLanguageChart",
       //-   type="bar",
       //-   :options="languageChart.options",
       //-   :series="languageChart.series"
       //- )
-  section#contact.section.has-background-color1
-    .container
-      h1.title.has-text-color3 {{ $prismic.asText(home.contact_title) }}
-      prismic-rich-text.has-text-color3(:field="home.contact_content")
+  section#contact
+    b-container
+      h1.title {{ $prismic.asText(home.contact_title) }}
+      prismic-rich-text(:field="home.contact_content")
 </template>
 
 <script>
 import EducationTimeline from "@/components/EducationTimeline";
 import CertificatesTimeline from "@/components/CertificatesTimeline";
 import WorkTimeline from "@/components/WorkTimeline";
+import SkillBar from '@/components/SkillBar';
 import moment from "moment";
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
@@ -49,7 +55,8 @@ export default {
   components: {
     EducationTimeline,
     CertificatesTimeline,
-    WorkTimeline
+    WorkTimeline,
+    SkillBar
   },
   computed: {
     showLanguageChart() {
@@ -57,7 +64,7 @@ export default {
     },
   },
   mounted() {
-    this.navbarTween = gsap.to('.navbar-item.me', {
+    this.navbarTween = gsap.to('.navbar-brand.me', {
       x: 0,
       autoAlpha: 1,
       scrollTrigger: {
@@ -69,7 +76,7 @@ export default {
   },
   destroyed() {
     this.navbarTween.kill();
-    gsap.set('.navbar-item.me', {
+    gsap.set('.navbar-brand.me', {
       x: 0,
       autoAlpha: 1
     })
@@ -148,17 +155,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import "../assets/scss/vars";
-.hero-body {
-  .title {
-    color: $color3 !important;
-  }
-}
-#contact {
-  .title {
-    color: $color3 !important;
-  }
-}
-</style>

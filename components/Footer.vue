@@ -1,12 +1,17 @@
 <template lang="pug">
-footer.section.has-background-color2
-  .container
-    p Copyright &copy; 2019 Cale Dunlap.
+footer
+  b-container
+    p Copyright &copy; {{year}} Cale Dunlap.
       | #[a(href="https://github.com/cdunlap/cdunlap.github.io", target="_blank") View Source].
 </template>
 
 <script>
-export default {};
+import moment from 'moment'
+export default {
+  data: () => ({
+    year: moment().format("YYYY")
+  })
+};
 </script>
 
 <style lang="css" scoped>

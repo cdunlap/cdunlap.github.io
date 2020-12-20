@@ -20,15 +20,3 @@ $color5: rgba(89, 89, 89, 1);
 @function px2rem($target, $context: 14) {
   @return ( ( 1 / $context ) * $target )+0rem;
 }
-
-// Bulma vars
-$primary: $color1;
-$link: $color4;
-$dark: $color2;
-$light: $color3;
-$link-hover: $color3;
-
-$navbar-background-color: $color2;
-$navbar-item-color: $color3;
-$navbar-item-hover-color: $color3;
-$navbar-item-hover-background-color: $color1;
