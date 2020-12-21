@@ -2,7 +2,7 @@
   main#project(v-if="Object.keys(project).length > 0")
     b-jumbotron(:fluid="true" :header="$prismic.asText(project.data.name)" :lead="$prismic.asText(project.data.description)")
       .tags
-        b-badge.mr-1(v-for="tag in project.tags") {{tag}}
+        b-badge.mr-1(v-for="tag in project.tags" :key="tag") {{tag}}
       .live(v-if="project.data.live_url.url")
         strong Live link: &nbsp;
           a(:href="project.data.live_url.url" target="_blank") {{project.data.live_url.url}}

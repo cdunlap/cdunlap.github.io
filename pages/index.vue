@@ -3,6 +3,7 @@ main#home
   section#hero.has-background-color2
     b-jumbotron(
       :header="$prismic.asText(home.hero_title)"
+      :lead="$prismic.asText(home.hero_lead)"
       bg-variant="color2"
       text-variant="color3"
       :fluid="true")

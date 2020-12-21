@@ -3,7 +3,7 @@ main
   b-container
     h1.mb-4 Projects
     b-card-group(columns)
-      b-card(v-for="project in projects" :key="project.id")
+      b-card(v-for="project in projects" :key="project.id" :title="$prismic.asText(project.data.name)")
         template(slot="header")
           figure.image
             img.img-fluid(
@@ -61,7 +61,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.project-list .column {
-  display: flex;
+@import '../assets/scss/vars';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+.card-columns {
+  column-count: 1;
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
+  @include media-breakpoint-up(lg) {
+    column-count: 3;
+  }
 }
 </style>
