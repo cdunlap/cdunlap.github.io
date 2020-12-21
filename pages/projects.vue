@@ -5,18 +5,16 @@ main
     b-card-group(columns)
       b-card(v-for="project in projects" :key="project.id" :title="$prismic.asText(project.data.name)")
         template(slot="header")
-          figure.image
-            img.img-fluid(
-              v-if="!project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
-              src="https://picsum.photos/800/450/?random"
-            )
-            prismic-image.img-fluid(
-              v-if="project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
-              :field="project.data.hero_image"
-            )
-            .embed-responsive.embed-responsive-16by9(v-if="project.data.hero_video && project.data.hero_video.url")
-              video(ref="video"
-                :src="project.data.hero_video.url" autoplay loop mute)
+          img.img-fluid(
+            v-if="!project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
+            src="https://picsum.photos/800/450/?random"
+          )
+          prismic-image.img-fluid(
+            v-if="project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
+            :field="project.data.hero_image"
+          )
+          video(v-if="project.data.hero_video && project.data.hero_video.url" ref="video"
+            :src="project.data.hero_video.url" autoplay loop mute)
         b-card-text {{$prismic.asText(project.data.description)}}
         .d-flex.justify-content-between
           b-button(:to="LinkResolver(project)" variant="primary") View Project
@@ -72,6 +70,12 @@ export default {
   }
   @include media-breakpoint-up(lg) {
     column-count: 3;
+  }
+}
+.card-header {
+  padding: 0;
+  video {
+    max-width: 100%;
   }
 }
 </style>
