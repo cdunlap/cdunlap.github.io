@@ -15,6 +15,9 @@ main
           )
           video(v-if="project.data.hero_video && project.data.hero_video.url" ref="video"
             :src="project.data.hero_video.url" autoplay loop mute)
+        .tags
+          b-badge.mr-1(v-for="tag in project.tags" :key="tag") {{tag}}
+
         b-card-text {{$prismic.asText(project.data.description)}}
         .d-flex.justify-content-between
           b-button(:to="LinkResolver(project)" variant="primary") View Project
