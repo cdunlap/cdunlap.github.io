@@ -18,7 +18,8 @@ export default {
     */
     css: [
       // '@/assets/scss/_helpers.scss',
-      '@fortawesome/fontawesome-free/css/all.css'
+      '@fortawesome/fontawesome-free/css/all.css',
+      '@/assets/scss/_timeline.scss'
     ],
   
     /*

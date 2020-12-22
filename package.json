@@ -15,7 +15,6 @@
     "@tweenjs/tween.js": "^18.3.2",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.1",
-    "bulma-timeline": "^3.0.4",
     "gsap": "^3.5.1",
     "moment": "^2.29.1",
     "nuxt": "^2.14.11",

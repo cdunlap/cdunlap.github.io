@@ -17,22 +17,24 @@
           prismic-image.img-fluid(v-if="project.data.hero_image && project.data.hero_image.url"
             :field="project.data.hero_image")
 
-    b-container.media(v-for="(slice, idx) in project.data.body" :key="`slice-${idx}`")
+    b-container(v-for="(slice, idx) in project.data.body" :key="`slice-${idx}`")
       template(v-if="slice.slice_type === 'project_photos'")
         h2 Photos
         v-gallery(:images="slice.items.map(i => i.project_photo.url)"
           :index="photoIndex" @close="photoIndex = null")
-        .gallery-photos
-          figure(v-for="(item, idx) in slice.items" :key="idx")
-            prismic-image.gallery-image(
+        .gallery-photos.row
+          figure.col-md-4.col-sm-2(v-for="(item, idx) in slice.items" :key="idx")
+            prismic-image.gallery-image.img-fluid(
               :field="item.project_photo"
               @click="photoIndex = idx")
       template(v-if="slice.slice_type === 'project_videos'")
         h2 Videos
-        .gallery-videos
-          prismic-embed.gallery-video(v-for="(item, idx) in slice.items"
-            :key="idx"
-            :field="item.project_video")
+        .gallery-videos.row
+          .col-md-4.col-sm-2(v-for="(item, idx) in slice.items")
+            .embed-responsive.embed-responsive-16by9
+              prismic-embed.gallery-video(
+                :key="idx"
+                :field="item.project_video")
 </template>
 
 <script>
@@ -57,6 +59,7 @@ export default {
 .hero-body.has-bg {
   background-size: cover;
 }
+/*
 .gallery-photos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -74,10 +77,12 @@ export default {
     }
   }
 }
+
 .gallery-videos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 400px);
   grid-gap: 15px;
 }
+*/
 </style>

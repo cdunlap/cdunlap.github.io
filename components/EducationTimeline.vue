@@ -1,16 +1,10 @@
 <template lang="pug">
 .education
-  .timeline(ref="timeline")
-    .timeline-header
-      span.tag.is-medium.has-background-color4.has-text-color3 Current
-    .timeline-item(v-for="(item, idx) in data", v-bind:key="idx")
-      .timeline-marker
-      .timeline-content.has-text-color3
-        p.heading {{ item.dates }}
-        p
-          strong.has-text-color3 {{ item.degree }}
-          div {{ item.school }}, {{ item.location }}
-          div(v-if="item.other") {{ item.other }}
+  Timeline
+    TimelineItem(v-for="(item, idx) in data", v-bind:key="idx"
+      :date="item.dates" :title="item.degree")
+      .small {{item.school}}, {{item.location}}
+      .small(v-if="item.other") {{ item.other }}
 </template>
 
 <script>
@@ -19,8 +13,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 if(process.client) {
   gsap.registerPlugin(ScrollTrigger)
 }
+import Timeline from '@/components/Timeline.vue'
+import TimelineItem from '@/components/TimelineItem'
+
 export default {
   props: ["data"],
+  components: {
+    Timeline, TimelineItem
+  },
   mounted() {
     /*
     const $timeline = this.$refs.timeline;

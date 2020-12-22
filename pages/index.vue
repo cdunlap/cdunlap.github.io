@@ -13,13 +13,13 @@ main#home
     b-container
       b-row
         b-col(md="4")
-          h1.title {{ $prismic.asText(home.institutional_education_title) }}
+          h2 {{ $prismic.asText(home.institutional_education_title) }}
           EducationTimeline(:data="home.education")
         b-col(md="4")
-          h1.title {{ $prismic.asText(home.certificates_courses_title) }}
+          h2 {{ $prismic.asText(home.certificates_courses_title) }}
           CertificatesTimeline(:data="home.certificates")
         b-col(md="4")
-          h1.title {{ $prismic.asText(home.work_history_title) }}
+          h2 {{ $prismic.asText(home.work_history_title) }}
           WorkTimeline(:data="home.work_history")
   section#skills.mb-4
     b-container
@@ -27,12 +27,6 @@ main#home
       prismic-rich-text(:field="home.skills_content")
       b-row.skills
         SkillBar.col-sm-6.col-md-4(v-for="skill in home.skills" :key="$prismic.asText(skill.name)" :skill="skill")
-      //- VueApexCharts(
-      //-   v-if="showLanguageChart",
-      //-   type="bar",
-      //-   :options="languageChart.options",
-      //-   :series="languageChart.series"
-      //- )
   section#contact
     b-container
       h1.title {{ $prismic.asText(home.contact_title) }}
