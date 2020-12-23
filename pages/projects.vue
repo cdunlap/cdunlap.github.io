@@ -3,7 +3,11 @@ main
   b-container
     h1.mb-4 Projects
     b-card-group(columns)
-      b-card(v-for="project in projects" :key="project.id" :title="$prismic.asText(project.data.name)")
+      b-card(
+        v-for="project in projects",
+        :key="project.id",
+        :title="$prismic.asText(project.data.name)"
+      )
         template(slot="header")
           img.img-fluid(
             v-if="!project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
@@ -13,37 +17,47 @@ main
             v-if="project.data.hero_image.url && !(project.data.hero_video && project.data.hero_video.url)",
             :field="project.data.hero_image"
           )
-          video(v-if="project.data.hero_video && project.data.hero_video.url" ref="video"
-            :src="project.data.hero_video.url" autoplay loop mute)
+          video(
+            v-if="project.data.hero_video && project.data.hero_video.url",
+            ref="video",
+            :src="project.data.hero_video.url",
+            autoplay,
+            loop,
+            mute
+          )
         .tags
-          b-badge.mr-1(v-for="tag in project.tags" :key="tag") {{tag}}
+          b-badge.mr-1(v-for="tag in project.tags", :key="tag") {{ tag }}
 
-        b-card-text {{$prismic.asText(project.data.description)}}
+        b-card-text {{ $prismic.asText(project.data.description) }}
         .d-flex.justify-content-between
-          b-button(:to="LinkResolver(project)" variant="primary") View Project
-          b-button(v-if="project.data.live_url.url"
-            :href="project.data.live_url.url"
-            target="_blank") Visit Site &nbsp;
-              i.fa.fa-external-link-alt
+          b-button(:to="LinkResolver(project)", variant="primary") View Project
+          b-button(
+            v-if="project.data.live_url.url",
+            :href="project.data.live_url.url",
+            target="_blank"
+          ) Visit Site &nbsp;
+            i.fa.fa-external-link-alt
 </template>
 
 <script>
-import LinkResolver from '@/plugins/link-resolver'
-import { gsap } from 'gsap'
+import LinkResolver from "@/plugins/link-resolver";
+import { gsap } from "gsap";
 
 export default {
-  async asyncData({$prismic, error}) {
+  async asyncData({ $prismic, error }) {
     try {
-      const projects = (await $prismic.api.query(
-        $prismic.predicates.at('document.type', 'project')
-      )).results
-      return { projects }
+      const projects = (
+        await $prismic.api.query(
+          $prismic.predicates.at("document.type", "project")
+        )
+      ).results;
+      return { projects };
     } catch (e) {
-      error({statusCode: 404, message: 'Page not found'})
+      error({ statusCode: 404, message: "Page not found" });
     }
   },
   methods: {
-    LinkResolver
+    LinkResolver,
   },
   mounted() {
     /*
@@ -57,15 +71,15 @@ export default {
       force3D: true
     })
     */
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/vars';
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
+@import "../assets/scss/vars";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
 .card-columns {
   column-count: 1;
   @include media-breakpoint-up(md) {
