@@ -29,7 +29,7 @@ export default {
     plugins: [
       // '~/plugins/prismic-vue.js'
       // { src: '~/plugins/v-lightbox.js', mode: 'client' }
-      { src: '~/plugins/vue-gallery.client.js' },
+      { src: '~/plugins/vue-gallery.client.js', ssr: false },
       { src: '~/plugins/bootstrap-vue.js' }
     ],
   
