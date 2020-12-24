@@ -1,5 +1,13 @@
 <template lang="pug">
 main#resume
+  b-jumbotron(
+    :header="$prismic.asText(home.hero_title)",
+    :lead="$prismic.asText(home.hero_lead)",
+    bg-variant="color2",
+    text-variant="color3",
+    :fluid="true"
+  )
+    prismic-rich-text.subtitle(:field="home.hero_content")
   b-container
     b-row
       b-col(md="4")
@@ -7,7 +15,7 @@ main#resume
         WorkTimeline(:data="home.work_history")
       b-col(md="4")
         h2 {{ $prismic.asText(home.institutional_education_title) }}
-        EducationTimeline(:data="home.education")
+        //- EducationTimeline(:data="home.education")
       b-col(md="4")
         h2 {{ $prismic.asText(home.certificates_courses_title) }}
         CertificatesTimeline(:data="home.certificates")
@@ -15,7 +23,7 @@ main#resume
     h1.title {{ $prismic.asText(home.skills_title) }}
     prismic-rich-text(:field="home.skills_content")
     b-row.skills
-      b-col(md="4" v-for="skill in skills" :key="skill")
+      b-col(md="4" v-for="skill in skills" :key="skill.id")
         strong {{$prismic.asText(skill.data.name)}}
       //- SkillBar.col-sm-6.col-md-4(
       //-   v-for="skill in home.skills",
@@ -72,6 +80,7 @@ export default {
   },
   async asyncData({ $prismic, error }) {
     try {
+      /*
       const home = (await $prismic.api.getSingle("home")).data;
       // Format the education texts
       home.education.forEach((e) => {
@@ -100,50 +109,18 @@ export default {
         w.location = $prismic.asText(w.location);
       });
 
-      // Setup the skills chart
-      /*
-      const skills = home.skills
-        .sort((a, b) => {
-          const years = [
-            Math.max(a.professional_experience, a.personal_experience),
-            Math.max(b.professional_experience, b.personal_experience),
-          ];
-          return years[1] - years[0];
-        })
-        .map((skill) => {
-          return {
-            name: $prismic.asText(skill.name),
-            professional_exp: skill.professional_experience,
-            personal_exp: skill.personal_experience,
-          };
-        });
-
-      const languageChart = {
-        options: {
-          colors: ["#2374AB", "#0A090C"],
-          xaxis: {
-            categories: skills.map((l) => l.name),
-          },
-        },
-        series: [
-          {
-            name: "Professional Experience",
-            data: skills.map((l) => l.professional_exp),
-          },
-          {
-            name: "Personal Experience",
-            data: skills.map((l) => l.personal_exp),
-          },
-        ],
-      };
-      */
-
       const skills = (
         await $prismic.api.query(
           $prismic.predicates.at("document.type", "skill")
         )
       ).results;
-      return { home, skills };
+      */
+
+      const [home, skills] = await Promise.all([
+        $prismic.api.getSingle('home'),
+        $prismic.api.query($prismic.predicates.at('document.type', 'skill'))
+      ])
+      return { home: home.data, skills: skills.results };
     } catch (e) {
       console.error(e);
       error({ statusCode: 404, message: "Page not found" });

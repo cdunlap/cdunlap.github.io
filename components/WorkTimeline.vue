@@ -4,11 +4,11 @@
     TimelineItem(
       v-for="(item, idx) in data",
       v-bind:key="idx",
-      :date="item.dates",
-      :title="item.job_title"
+      :date="$prismic.asText(item.dates)",
+      :title="$prismic.asText(item.job_title)"
     )
-      .small {{ item.company }}
-      .small {{ item.location }}
+      .small {{ $prismic.asText(item.company) }}
+      .small {{ $prismic.asText(item.location) }}
 </template>
 
 <script>
@@ -19,6 +19,6 @@ export default {
   components: {
     Timeline,
     TimelineItem,
-  },
+  }
 };
 </script>

@@ -4,8 +4,8 @@ b-navbar(toggleable="lg", type="dark", variant="dark", fixed="top")
   b-navbar-toggle(target="nav-collapse")
   b-collapse#nav-collapse(is-nav)
     b-navbar-nav.ml-auto
-      b-nav-item(to="/") Home
-      b-nav-item(:to="{ name: 'projects' }") Projects
+      b-nav-item(to="/") Projects
+      b-nav-item(:to="{ name: 'resume' }") Resume
 </template>
 
 <script>

@@ -2,15 +2,15 @@
 main
   section
     b-jumbotron(
-      :header="$prismic.asText(home.hero_title)",
-      :lead="$prismic.asText(home.hero_lead)",
+      :header="$prismic.asText(home.data.hero_title)",
+      :lead="$prismic.asText(home.data.hero_lead)",
       bg-variant="color2",
       text-variant="color3",
       :fluid="true"
     )
-      prismic-rich-text.subtitle(:field="home.hero_content")
+      prismic-rich-text.subtitle(:field="home.data.hero_content")
   b-container
-    h1.mb-4 Projects
+    h1.mb-4 {{$prismic.asText(project_list.data.projects_title)}}
     b-card-group(columns)
       b-card(
         v-for="project in projects",
@@ -55,23 +55,12 @@ import { gsap } from "gsap";
 export default {
   async asyncData({ $prismic, error }) {
     try {
-      /*
-      const home = (await $prismic.api.getSingle("home")).data;
-      const project_list = (await $prismic.api.getSingle('project_list')).data;
-      */
-      /*
-      const projects = (
-        await $prismic.api.query(
-          $prismic.predicates.at("document.type", "project")
-        )
-      ).results;
-      */
-      const { home, projects } = (await $prismic.api.query([
-        $prismic.Predicates.at('my.page.uid', 'home'),
-        $prismic.Predicates.at('my.page.uid', 'project_list')
-      ])).results
-      console.log('Hello', home, projects);
-      return { home, projects };
+      const [home, project_list] = await Promise.all([
+        $prismic.api.getSingle('home'),
+        $prismic.api.getSingle('project_list')
+      ]);
+      const projects = (await $prismic.api.getByIDs(project_list.data.projects.map(p => p.project.id))).results;
+      return { home, project_list, projects };
     } catch (e) {
       console.error(e);
       error({ statusCode: 404, message: "Page not found" });
