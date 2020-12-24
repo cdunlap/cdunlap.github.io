@@ -2,31 +2,38 @@
 main#home
   section#hero.has-background-color2
     b-jumbotron(
-      :header="$prismic.asText(home.hero_title)"
-      :lead="$prismic.asText(home.hero_lead)"
-      bg-variant="color2"
-      text-variant="color3"
-      :fluid="true")
+      :header="$prismic.asText(home.hero_title)",
+      :lead="$prismic.asText(home.hero_lead)",
+      bg-variant="color2",
+      text-variant="color3",
+      :fluid="true"
+    )
       prismic-rich-text.subtitle(:field="home.hero_content")
 
   section#resume
     b-container
       b-row
         b-col(md="4")
+          h2 {{ $prismic.asText(home.work_history_title) }}
+          WorkTimeline(:data="home.work_history")
+        b-col(md="4")
           h2 {{ $prismic.asText(home.institutional_education_title) }}
           EducationTimeline(:data="home.education")
         b-col(md="4")
           h2 {{ $prismic.asText(home.certificates_courses_title) }}
           CertificatesTimeline(:data="home.certificates")
-        b-col(md="4")
-          h2 {{ $prismic.asText(home.work_history_title) }}
-          WorkTimeline(:data="home.work_history")
   section#skills.mb-4
     b-container
       h1.title {{ $prismic.asText(home.skills_title) }}
       prismic-rich-text(:field="home.skills_content")
       b-row.skills
-        SkillBar.col-sm-6.col-md-4(v-for="skill in home.skills" :key="$prismic.asText(skill.name)" :skill="skill")
+        b-col(md="4" v-for="skill in skills" :key="skill")
+          strong {{$prismic.asText(skill.data.name)}}
+        //- SkillBar.col-sm-6.col-md-4(
+        //-   v-for="skill in home.skills",
+        //-   :key="$prismic.asText(skill.name)",
+        //-   :skill="skill"
+        //- )
   section#contact
     b-container
       h1.title {{ $prismic.asText(home.contact_title) }}
@@ -37,12 +44,12 @@ main#home
 import EducationTimeline from "@/components/EducationTimeline";
 import CertificatesTimeline from "@/components/CertificatesTimeline";
 import WorkTimeline from "@/components/WorkTimeline";
-import SkillBar from '@/components/SkillBar';
+import SkillBar from "@/components/SkillBar";
 import moment from "moment";
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
-if(process.client) {
-  gsap.registerPlugin(ScrollTrigger)
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger);
 }
 
 export default {
@@ -51,7 +58,7 @@ export default {
     EducationTimeline,
     CertificatesTimeline,
     WorkTimeline,
-    SkillBar
+    SkillBar,
   },
   computed: {
     showLanguageChart() {
@@ -59,22 +66,22 @@ export default {
     },
   },
   mounted() {
-    this.navbarTween = gsap.to('.navbar-brand.me', {
+    this.navbarTween = gsap.to(".navbar-brand.me", {
       x: 0,
       autoAlpha: 1,
       scrollTrigger: {
-        start: 'bottom top+=20%',
-        trigger: '.hero',
-        toggleActions: 'play none none reverse'
-      }
-    })
+        start: "bottom top+=20%",
+        trigger: ".hero",
+        toggleActions: "play none none reverse",
+      },
+    });
   },
   destroyed() {
     this.navbarTween.kill();
-    gsap.set('.navbar-brand.me', {
+    gsap.set(".navbar-brand.me", {
       x: 0,
-      autoAlpha: 1
-    })
+      autoAlpha: 1,
+    });
   },
   async asyncData({ $prismic, error }) {
     try {
@@ -107,6 +114,7 @@ export default {
       });
 
       // Setup the skills chart
+      /*
       const skills = home.skills
         .sort((a, b) => {
           const years = [
@@ -141,8 +149,14 @@ export default {
           },
         ],
       };
+      */
 
-      return { home, languageChart };
+      const skills = (
+        await $prismic.api.query(
+          $prismic.predicates.at("document.type", "skill")
+        )
+      ).results;
+      return { home, skills };
     } catch (e) {
       console.error(e);
       error({ statusCode: 404, message: "Page not found" });
