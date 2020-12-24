@@ -7,8 +7,8 @@
       :date="item.certificate_date | certificateDate",
       :title="$prismic.asText(item.title)"
     )
-      //- .small {{ $prismic.asText(item.institution) }}, &nbsp;
-      //-   a(:href="item.certificate_url.url", target="_blank") {{ $prismic.asText(item.certificate_number) }}
+      .small {{ $prismic.asText(item.institution) }}, &nbsp;
+        a(:href="item.certificate_url.url", target="_blank") {{ $prismic.asText(item.certificate_number) }}
 </template>
 
 <script>

@@ -2,13 +2,13 @@
 main
   section
     b-jumbotron(
-      :header="$prismic.asText(home.data.hero_title)",
-      :lead="$prismic.asText(home.data.hero_lead)",
+      :header="$prismic.asText(project_list.data.hero_title)",
+      :lead="$prismic.asText(project_list.data.hero_lead)",
       bg-variant="color2",
       text-variant="color3",
       :fluid="true"
     )
-      prismic-rich-text.subtitle(:field="home.data.hero_content")
+      prismic-rich-text.subtitle(:field="project_list.data.hero_content")
   b-container
     h1.mb-4 {{$prismic.asText(project_list.data.projects_title)}}
     b-card-group(columns)

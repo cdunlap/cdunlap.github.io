@@ -15,21 +15,15 @@ main#resume
         WorkTimeline(:data="home.work_history")
       b-col(md="4")
         h2 {{ $prismic.asText(home.institutional_education_title) }}
-        //- EducationTimeline(:data="home.education")
+        EducationTimeline(:data="home.education")
       b-col(md="4")
         h2 {{ $prismic.asText(home.certificates_courses_title) }}
         CertificatesTimeline(:data="home.certificates")
   b-container.mb-4
     h1.title {{ $prismic.asText(home.skills_title) }}
     prismic-rich-text(:field="home.skills_content")
-    b-row.skills
-      b-col(md="4" v-for="skill in skills" :key="skill.id")
-        strong {{$prismic.asText(skill.data.name)}}
-      //- SkillBar.col-sm-6.col-md-4(
-      //-   v-for="skill in home.skills",
-      //-   :key="$prismic.asText(skill.name)",
-      //-   :skill="skill"
-      //- )
+    b-card-group(columns)
+      SkillCard(v-for="skill in skills" :key="skill.id" :skill="skill.data")
   b-container
     h1.title {{ $prismic.asText(home.contact_title) }}
     prismic-rich-text(:field="home.contact_content")
@@ -39,7 +33,7 @@ main#resume
 import EducationTimeline from "@/components/EducationTimeline";
 import CertificatesTimeline from "@/components/CertificatesTimeline";
 import WorkTimeline from "@/components/WorkTimeline";
-import SkillBar from "@/components/SkillBar";
+import SkillCard from '@/components/SkillCard';
 import moment from "moment";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
@@ -53,69 +47,28 @@ export default {
     EducationTimeline,
     CertificatesTimeline,
     WorkTimeline,
-    SkillBar,
-  },
-  computed: {
-    showLanguageChart() {
-      return Object.keys(this.languageChart).length > 0;
-    },
+    SkillCard,
   },
   mounted() {
-    this.navbarTween = gsap.to(".navbar-brand.me", {
-      x: 0,
-      autoAlpha: 1,
-      scrollTrigger: {
-        start: "bottom top+=20%",
-        trigger: ".hero",
-        toggleActions: "play none none reverse",
-      },
-    });
+    // this.navbarTween = gsap.to(".navbar-brand.me", {
+    //   x: 0,
+    //   autoAlpha: 1,
+    //   scrollTrigger: {
+    //     start: "bottom top+=20%",
+    //     trigger: ".hero",
+    //     toggleActions: "play none none reverse",
+    //   },
+    // });
   },
   destroyed() {
-    this.navbarTween.kill();
-    gsap.set(".navbar-brand.me", {
-      x: 0,
-      autoAlpha: 1,
-    });
+    // this.navbarTween.kill();
+    // gsap.set(".navbar-brand.me", {
+    //   x: 0,
+    //   autoAlpha: 1,
+    // });
   },
   async asyncData({ $prismic, error }) {
     try {
-      /*
-      const home = (await $prismic.api.getSingle("home")).data;
-      // Format the education texts
-      home.education.forEach((e) => {
-        e.dates = $prismic.asText(e.dates);
-        e.degree = $prismic.asText(e.degree);
-        e.school = $prismic.asText(e.school);
-        e.location = $prismic.asText(e.location);
-        e.other = $prismic.asText(e.other);
-      });
-
-      // Format the certs text
-      home.certificates.forEach((c) => {
-        c.title = $prismic.asText(c.title);
-        c.institution = $prismic.asText(c.institution);
-        c.certificate_number = $prismic.asText(c.certificate_number);
-        c.certificate_date = moment(c.certificate_date).format("MMMM D, YYYY");
-        c.certificate_url = c.certificate_url.url;
-      });
-
-      // Format the work history
-      home.work_history.forEach((w) => {
-        w.company = $prismic.asText(w.company);
-        w.company_website = w.company_website.url || null;
-        w.dates = $prismic.asText(w.dates);
-        w.job_title = $prismic.asText(w.job_title);
-        w.location = $prismic.asText(w.location);
-      });
-
-      const skills = (
-        await $prismic.api.query(
-          $prismic.predicates.at("document.type", "skill")
-        )
-      ).results;
-      */
-
       const [home, skills] = await Promise.all([
         $prismic.api.getSingle('home'),
         $prismic.api.query($prismic.predicates.at('document.type', 'skill'))
@@ -128,3 +81,20 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+@import "../assets/scss/vars";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+.card-columns {
+  column-count: 1;
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
+  @include media-breakpoint-up(lg) {
+    column-count: 3;
+  }
+}
+</style>

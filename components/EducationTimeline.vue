@@ -4,11 +4,11 @@
     TimelineItem(
       v-for="(item, idx) in data",
       v-bind:key="idx",
-      :date="item.dates",
-      :title="item.degree"
+      :date="$prismic.asText(item.dates)",
+      :title="$prismic.asText(item.degree)"
     )
-      .small {{ item.school }}, {{ item.location }}
-      .small(v-if="item.other") {{ item.other }}
+      .small {{ $prismic.asText(item.school) }}, {{ $prismic.asText(item.location) }}
+      .small(v-if="item.other") {{ $prismic.asText(item.other) }}
 </template>
 
 <script>
