@@ -1,0 +1,32 @@
+@import 'vars';
+$marker-size: 15px;
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: $marker-size * 1.45;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: $marker-size 0;
+  padding-left: $marker-size;
+}
+ul.timeline > li:before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid $color4;
+  left: $marker-size;
+  width: $marker-size;
+  height: $marker-size;
+  z-index: 400;
+}

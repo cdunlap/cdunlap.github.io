@@ -1,0 +1,18 @@
+@import './vars';
+
+
+// Bulma vars
+$primary: $color1;
+$link: $color4;
+$dark: $color2;
+$light: $color3;
+$link-hover: $color3;
+
+$navbar-background-color: $color2;
+$navbar-item-color: $color3;
+$navbar-item-hover-color: $color3;
+$navbar-item-hover-background-color: $color1;
+
+
+@import '~bulma/bulma.sass';
+@import '~bulma-timeline';

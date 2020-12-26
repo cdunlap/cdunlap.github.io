@@ -1,0 +1,22 @@
+/* Coolors Exported Palette - coolors.co/1c3144-0a090c-f0edee-2374ab-595959 */
+
+/* RGB */
+$color1: rgba(28, 49, 68, 1);
+$color2: rgba(10, 9, 12, 1);
+$color3: rgba(240, 237, 238, 1);
+$color4: rgba(35, 116, 171, 1);
+$color5: rgba(89, 89, 89, 1);
+
+// $color1: #FAFAFA;
+// $color2: #77A0BB;
+// $color3: #395590;
+// $color4: #8B5A62;
+// $color5: #1A1B28;
+
+@function px2em($target, $context: 14) {
+  @return ( ( 1 / $context ) * $target )+0em;
+}
+
+@function px2rem($target, $context: 14) {
+  @return ( ( 1 / $context ) * $target )+0rem;
+}
