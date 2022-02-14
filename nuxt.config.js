@@ -10,7 +10,8 @@ export default {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: 'I\'m a syntactically diverse software developer living in the Reno, NV area of the United States.' },
         { property: 'og:title', content: 'Cale Dunlap' },
-        { property: 'og:description', content: 'I\'m a syntactically diverse software developer living in the Reno, NV area of the United States.' }
+        { property: 'og:description', content: 'I\'m a syntactically diverse software developer living in the Reno, NV area of the United States.' },
+        { property: 'og:image', content: 'https://cale.codes/img/Portfolio-Social.png' }
       ]
     },
   
