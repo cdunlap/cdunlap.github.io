@@ -2,6 +2,9 @@
   "name": "cale.codes",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
