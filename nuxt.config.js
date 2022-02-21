@@ -41,7 +41,11 @@ export default {
     ** Doc: https://nuxtjs.org/guide/modules
     */
     modules: [
-        '@nuxtjs/prismic'
+      '@nuxtjs/prismic'
+    ],
+
+    buildModules: [
+      '@nuxtjs/prismic'
     ],
   
     /*
@@ -63,11 +67,18 @@ export default {
         if (ctx.isDev) {
           config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
         }
+      },
+      babel:{
+        plugins: [
+          ["@babel/plugin-proposal-private-property-in-object", { "loose": true }],
+          ["@babel/plugin-proposal-private-methods", { "loose": true }]
+        ]
       }
     },
 
     prismic: {
         endpoint: 'https://calecodes.prismic.io/api/v2',
+        modern: true,
         linkResolver: '@/plugins/link-resolver',
         htmlSerializer: '@/plugins/html-serializer',
     },
