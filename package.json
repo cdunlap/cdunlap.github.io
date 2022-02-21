@@ -13,15 +13,13 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "@nuxtjs/prismic": "^1.2.4",
-    "@prismicio/vue": "^2.0.7",
-    "@tweenjs/tween.js": "^18.3.2",
+    "@nuxtjs/prismic": "^1.4.0",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.1",
-    "chart.js": "^2.9.4",
-    "gsap": "^3.5.1",
+    "chart.js": "^3.7.1",
+    "gsap": "^3.9.1",
     "moment": "^2.29.1",
-    "nuxt": "^2.14.11",
+    "nuxt": "^2.15.8",
     "vue-chartjs": "^3.5.1",
     "vue-gallery": "^2.0.1"
   },
@@ -31,6 +29,6 @@
     "node-sass": "^4.12.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^8.0.2"
   }
 }
