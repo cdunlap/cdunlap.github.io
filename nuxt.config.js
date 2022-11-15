@@ -22,7 +22,8 @@ export default {
     css: [
       // '@/assets/scss/_helpers.scss',
       '@fortawesome/fontawesome-free/css/all.css',
-      '@/assets/scss/_timeline.scss'
+      '@/assets/scss/_timeline.scss',
+      '@/assets/scss/_coreui.scss'
     ],
   
     /*
@@ -33,7 +34,7 @@ export default {
       // '~/plugins/prismic-vue.js'
       // { src: '~/plugins/v-lightbox.js', mode: 'client' }
       { src: '~/plugins/vue-gallery.client.js', ssr: false },
-      { src: '~/plugins/bootstrap-vue.js' }
+      // { src: '~/plugins/bootstrap-vue.js' }
     ],
   
     /*

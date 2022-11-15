@@ -28,10 +28,10 @@ b-card(:title="$prismic.asText(skill.name)")
 </template>
 
 <script>
-import SkillExperienceBars from '@/components/SkillExperienceBars'
+// import SkillExperienceBars from '@/components/SkillExperienceBars'
 export default {
   components: {
-    SkillExperienceBars
+    // SkillExperienceBars
   },
   props: {
     skill: {

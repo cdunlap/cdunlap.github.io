@@ -34,12 +34,6 @@ import EducationTimeline from "@/components/EducationTimeline";
 import CertificatesTimeline from "@/components/CertificatesTimeline";
 import WorkTimeline from "@/components/WorkTimeline";
 import SkillCard from '@/components/SkillCard';
-import moment from "moment";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
-if (process.client) {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export default {
   name: "home",
@@ -49,24 +43,7 @@ export default {
     WorkTimeline,
     SkillCard,
   },
-  mounted() {
-    // this.navbarTween = gsap.to(".navbar-brand.me", {
-    //   x: 0,
-    //   autoAlpha: 1,
-    //   scrollTrigger: {
-    //     start: "bottom top+=20%",
-    //     trigger: ".hero",
-    //     toggleActions: "play none none reverse",
-    //   },
-    // });
-  },
-  destroyed() {
-    // this.navbarTween.kill();
-    // gsap.set(".navbar-brand.me", {
-    //   x: 0,
-    //   autoAlpha: 1,
-    // });
-  },
+
   async asyncData({ $prismic, error }) {
     try {
       const [home, skills] = await Promise.all([

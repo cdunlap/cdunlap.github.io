@@ -9,10 +9,10 @@ main
       :fluid="true"
     )
       prismic-rich-text.subtitle(:field="project_list.data.hero_content")
-  b-container
+  CContainer
     h1.mb-4 {{$prismic.asText(project_list.data.projects_title)}}
-    b-card-group(columns)
-      b-card(
+    CCardGroup(columns)
+      CCard(
         v-for="project in projects",
         :key="project.id",
         :title="$prismic.asText(project.data.name)"
@@ -35,12 +35,12 @@ main
             mute
           )
         .tags
-          b-badge.mr-1(v-for="tag in project.tags", :key="tag") {{ tag }}
+          CBadge.mr-1(v-for="tag in project.tags", :key="tag") {{ tag }}
 
-        b-card-text {{ $prismic.asText(project.data.description) }}
+        CCardText {{ $prismic.asText(project.data.description) }}
         .d-flex.justify-content-between
-          b-button(:to="LinkResolver(project)", variant="primary") View Project
-          b-button(
+          CButton(:to="LinkResolver(project)", variant="primary") View Project
+          CButton(
             v-if="project.data.live_url.url",
             :href="project.data.live_url.url",
             target="_blank"
@@ -50,9 +50,16 @@ main
 
 <script>
 import LinkResolver from "@/plugins/link-resolver";
-import { gsap } from "gsap";
+import { CContainer, CCardGroup, CCard, CCardBody, CCardText  } from '@coreui/vue';
 
 export default {
+  components: {
+    CContainer,
+    CCardGroup,
+    CCard,
+    CCardBody,
+    CCardText
+  },
   async asyncData({ $prismic, error }) {
     try {
       const [home, project_list] = await Promise.all([
@@ -68,19 +75,6 @@ export default {
   },
   methods: {
     LinkResolver,
-  },
-  mounted() {
-    /*
-    gsap.from('.project-list .card', {
-      duration: 1,
-      y: "-20",
-      opacity: 0,
-      delay: 0.5,
-      stagger: 0.15,
-      ease: 'power4.out',
-      force3D: true
-    })
-    */
   },
 };
 </script>
