@@ -1,0 +1,6 @@
+tasks:
+    hello:
+        name: Install Node dependencies
+        command: npm install
+        triggeredBy:
+          - postEnvironmentStart
