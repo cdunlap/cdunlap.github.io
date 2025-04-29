@@ -9,5 +9,11 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/scripts'
-  ]
+  ],
+
+  vite: {
+    server: {
+      allowedHosts: ['.gitpod.dev']
+    }
+  }
 })

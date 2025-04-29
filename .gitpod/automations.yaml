@@ -1,5 +1,5 @@
 tasks:
-    hello:
+    setup:
         name: Install Node dependencies
         command: npm install
         triggeredBy:
