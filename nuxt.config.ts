@@ -15,5 +15,7 @@ export default defineNuxtConfig({
     server: {
       allowedHosts: ['.gitpod.dev']
     }
-  }
+  },
+
+  css: ['~/assets/css/main.css']
 })
