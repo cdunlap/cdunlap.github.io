@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme static {
+    --font-sans: 'Roboto', sans-serif;
+    --font-buttons: 'Bebas Neue', sans-serif;
+    --font-headings: 'Bebas Neue', sans-serif;
+}
+
+.dark {
+    --background-color-default: var(--color-zinc-900);
+   --ui-primary: white;
+}
