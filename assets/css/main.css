@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+:root {
+    --color1: #BFF205;
+    --color2: #83A603;
+    --color3: #D7F205;
+    --color4: #BFBFBF;
+    --color5: #0D0D0D;
+}
+
 @theme static {
     --font-sans: 'Roboto', sans-serif;
     --font-buttons: 'Bebas Neue', sans-serif;
