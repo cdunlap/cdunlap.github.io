@@ -10,12 +10,37 @@
 }
 
 @theme static {
-    --font-sans: 'Roboto', sans-serif;
-    --font-buttons: 'Bebas Neue', sans-serif;
-    --font-headings: 'Bebas Neue', sans-serif;
+    --font-sans: 'Oxanium', sans-serif;
+    --font-buttons: 'Press Start 2P', sans-serif;
+    --font-headings: 'Press Start 2P', sans-serif;
+    --background-color-default: var(--color4);
+    --text-color-default: var(--color5);
+    --ui-primary: var(--color2);
+    --ui-secondary: var(--color1);
+    --ui-text-muted: var(--color4);
 }
 
 .dark {
-    --background-color-default: var(--color-zinc-900);
-   --ui-primary: white;
+    --background-color-default: var(--color5);
+    --text-color-default: var(--color2);
+    --ui-primary: var(--color1);
+    --ui-secondary: var(--color2);
+    --ui-text-muted: #333;
+}
+
+h1 {
+    @apply text-5xl font-headings;
+    line-height: 1.1;
+}
+h2 {
+    @apply text-2xl font-headings;
+    line-height: 1.2;
+}
+body {
+    @apply text-base;
+    line-height: 1.6;
+}
+small {
+    @apply text-sm;
+    line-height: 1.4;
 }

@@ -1,5 +1,5 @@
 <template>
-    <UContainer class="my-4">
-        <h1 class="font-headings text-3xl">Resume</h1>
+    <UContainer class="py-16">
+        <h2>Resume</h2>
     </UContainer>
 </template>
