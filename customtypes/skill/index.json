@@ -1,0 +1,52 @@
+{
+  "id": "skill",
+  "json": {
+    "Main": {
+      "name": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "Name"
+        }
+      },
+      "subjective_rating": {
+        "type": "Number",
+        "config": {
+          "label": "Subjective Rating"
+        }
+      },
+      "professional_experience": {
+        "type": "Number",
+        "config": {
+          "label": "Professional Experience"
+        }
+      },
+      "personal_experience": {
+        "type": "Number",
+        "config": {
+          "label": "Personal Experience"
+        }
+      },
+      "associated_projects": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "project": {
+              "type": "Link",
+              "config": {
+                "select": "document",
+                "customtypes": ["project"],
+                "label": "Project"
+              }
+            }
+          },
+          "label": "Associated Projects"
+        }
+      }
+    }
+  },
+  "label": "Skill",
+  "repeatable": true,
+  "status": true,
+  "format": "custom"
+}

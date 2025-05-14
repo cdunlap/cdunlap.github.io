@@ -18,6 +18,7 @@
     --ui-primary: var(--color2);
     --ui-secondary: var(--color1);
     --ui-text-muted: var(--color4);
+    --ui-neutral: 'stone';
 }
 
 .dark {

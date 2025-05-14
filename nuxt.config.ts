@@ -1,3 +1,4 @@
+import { apiEndpoint, repositoryName } from "./slicemachine.config.json";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -8,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxtjs/prismic'
   ],
 
   vite: {
@@ -17,5 +19,15 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+
+  prismic: {
+    endpoint: apiEndpoint || repositoryName,
+    clientConfig: {
+      routes: [
+        { type: 'homepage', path: '/' },
+        { type: 'project', path: '/projects/:uid' },
+      ]
+    }
+  }
 })

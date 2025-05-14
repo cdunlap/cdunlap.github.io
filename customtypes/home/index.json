@@ -1,0 +1,408 @@
+{
+  "id": "home",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "format": "page",
+  "json": {
+    "Main": {
+      "hero_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Hero TItle",
+          "placeholder": "Hero TItle"
+        }
+      },
+      "hero_lead": {
+        "type": "StructuredText",
+        "config": {
+          "single": "paragraph",
+          "label": "Hero Lead"
+        }
+      },
+      "hero_content": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+          "allowTargetBlank": true,
+          "label": "Hero Content",
+          "placeholder": "Hero Content",
+          "labels": ["title", "subtitle", "has-text-color3"]
+        }
+      },
+      "contact_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Contact Title",
+          "placeholder": "Contact Title"
+        }
+      },
+      "contact_content": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+          "label": "Contact Content",
+          "placeholder": "Contact content",
+          "labels": ["has-text-color3", "title"]
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "home_hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "Education": {
+      "institutional_education_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Institutional Education Title",
+          "placeholder": "Institutional Education"
+        }
+      },
+      "education": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "school": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "School"
+              }
+            },
+            "location": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Location"
+              }
+            },
+            "dates": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Dates"
+              }
+            },
+            "degree": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Degree"
+              }
+            },
+            "other": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+                "allowTargetBlank": true,
+                "label": "Other"
+              }
+            }
+          },
+          "label": "Education"
+        }
+      },
+      "certificates_courses_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Certificates and Courses Title",
+          "placeholder": "Certificates & Courses"
+        }
+      },
+      "certificates": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "title": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Title"
+              }
+            },
+            "certificate_date": {
+              "type": "Date",
+              "config": {
+                "label": "Certificate Date"
+              }
+            },
+            "institution": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Institution"
+              }
+            },
+            "certificate_number": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Certificate Number"
+              }
+            },
+            "certificate_url": {
+              "type": "Link",
+              "config": {
+                "allowTargetBlank": true,
+                "label": "Certificate URL",
+                "select": null
+              }
+            }
+          },
+          "label": "certificates"
+        }
+      }
+    },
+    "Work History": {
+      "work_history_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Work History Title",
+          "placeholder": "Work History"
+        }
+      },
+      "work_history": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "company": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Company"
+              }
+            },
+            "company_website": {
+              "type": "Link",
+              "config": {
+                "label": "Company Website",
+                "select": null
+              }
+            },
+            "location": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Location"
+              }
+            },
+            "job_title": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Job Title"
+              }
+            },
+            "dates": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Dates"
+              }
+            }
+          },
+          "label": "Work History"
+        }
+      }
+    },
+    "Skills": {
+      "skills_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Skills Title",
+          "placeholder": "Skills"
+        }
+      },
+      "skills_content": {
+        "type": "StructuredText",
+        "config": {
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "label": "Skills Content"
+        }
+      },
+      "skills": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "name": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Name"
+              }
+            },
+            "subjective_rating": {
+              "type": "Number",
+              "config": {
+                "label": "Subjective Rating (0-100)"
+              }
+            },
+            "personal_experience": {
+              "type": "Number",
+              "config": {
+                "label": "Personal Experience (Years)"
+              }
+            },
+            "professional_experience": {
+              "type": "Number",
+              "config": {
+                "label": "Professional Experience (Years)"
+              }
+            }
+          },
+          "label": "Skills"
+        }
+      }
+    },
+    "Volunteer Service": {
+      "volunteer_service_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Volunteer Service Title",
+          "placeholder": "Volunteer Service Title"
+        }
+      },
+      "volunteer_service": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "organization": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Organization",
+                "placeholder": "Organization Name"
+              }
+            },
+            "dates": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Dates",
+                "placeholder": "Dates"
+              }
+            },
+            "organization_website": {
+              "type": "Link",
+              "config": {
+                "allowTargetBlank": true,
+                "label": "Organization Website",
+                "placeholder": "Organization Website",
+                "select": null
+              }
+            },
+            "location": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Location",
+                "placeholder": "Location"
+              }
+            },
+            "role": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Role",
+                "placeholder": "Role"
+              }
+            },
+            "responsibilities": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+                "allowTargetBlank": true,
+                "label": "Responsibilities",
+                "placeholder": "Responsibilities"
+              }
+            }
+          },
+          "label": "Volunteer Service"
+        }
+      }
+    },
+    "Publications": {
+      "publications_title": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+          "label": "Publications Title",
+          "placeholder": "Publications Title"
+        }
+      },
+      "publications": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "title": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Title",
+                "placeholder": "Title"
+              }
+            },
+            "publisher": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Publisher",
+                "placeholder": "Publisher"
+              }
+            },
+            "publish_date": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Publish Date",
+                "placeholder": "Publish Date"
+              }
+            },
+            "role": {
+              "type": "StructuredText",
+              "config": {
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+                "label": "Role",
+                "placeholder": "Role"
+              }
+            },
+            "url": {
+              "type": "Link",
+              "config": {
+                "allowTargetBlank": true,
+                "label": "URL",
+                "placeholder": "URL",
+                "select": null
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+                "allowTargetBlank": true,
+                "label": "Description",
+                "placeholder": "Description"
+              }
+            }
+          },
+          "label": "Publications"
+        }
+      }
+    }
+  }
+}
